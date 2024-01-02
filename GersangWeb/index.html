@@ -1,0 +1,234 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<section>
+  <div>
+    <div class="dropItem">
+      <h2>사냥 측정기</h2>
+      <form>
+        <select id="selectMonster">
+          <option value="default">몬스터를 고르세요.</option>
+          <option value="rudra">루드라의 혼(水)</option>
+          <option value="gundarba">건달바의 혼(水)</option>
+        </select>
+      </form>
+      <div class="exp">
+        <table id="exp">
+          <tr>
+            <th>시작 시간</th>
+            <th>끝난 시간</th>
+            <th>총 사냥 시간</th>
+          </tr>
+          <tr>
+            <td><input type="text" id="startHour"placeholder="시"> :
+            <input type="text" id="startMin"placeholder="분"> </td>
+            <td><input type="text" id="endHour" placeholder="시"> :
+            <input type="text" id="endMin" placeholder="분"> =</td>
+            <td><span id="resultTime"></span></td>
+          </tr>
+          <tr>
+            <th>시작 경험치</th>
+            <th>끝난 경험치</th>
+            <th>총 획득 경험치</th>
+          </tr>
+          <tr>
+            <td><input type="text" id="startExp"></td>
+            <td><input type="text" id="endExp"> =</td>
+            <td><span id="resultExp"></span></td>
+          </tr>
+          <tr>
+            <td>시간당 획득 경험치</td>
+            <td id="resultExpPerHour" colspan="3"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="tableWrapper">
+        <!-- 드롭 다운 실행 시 이미지 생성-->
+        <div id="imageWrapper" style="">
+          <img id="rudra-img" src="img/루드라.gif" alt="루드라" width="100%">
+        </div>
+        <!-- 드롭 다운 실행 시 테이블 생성-->
+        <div class="scollableTable">
+        <table id="default"></table>
+        <table id="gundarba">
+          <tr>
+            <th>아이템 이름</th>
+            <th>가격</th>
+            <th>수량</th>
+            <th>결과</th>
+          </tr>
+          <tr>
+            <td>건달바의 부서진 시타르</td>
+            <td class="price0">476,665</td>
+            <td class="quantity0"><input type="text"></td>
+            <td class="itemResult0"></td>
+          </tr>
+          <tr>
+            <td>부서진 팔찌</td>
+            <td class="price1">가격 : 390,000</td>
+            <td class="quantity1">
+            <td class="itemResult1"></td>
+          </tr>
+          <tr>
+            <td>마후라가의 부서진 목걸이</td>
+            <td class="price2">가격 : 390,000</td>
+            <td class="quantity2">
+            <td class="itemResult2"></td>
+          </tr>
+        </table>
+        <table id="rudra">
+            <tr>
+              <th>아이템 이름</th>
+              <th>가격</th>
+              <th>수량</th>
+              <th>결과</th>
+            </tr>
+            <tr>
+              <td><img src="img/건달바의%20부서진%20시타르.png"></span>
+              </td>
+              <td id="price0">가격 : 476,665</td>
+              <td class="quanInput"><input type="text" id="startQuan0"placeholder="전"> 개 /
+                <input type="text" id="endQuan0"placeholder="후"> 개</td>
+              <td id="itemResult0"></td>
+            </tr>
+            <tr>
+              <td><img src="img/부서진%20팔찌.png"></td>
+              <td id="price1">가격 : 390,000</td>
+              <td class="quanInput"><input type="text" id="startQuan1"placeholder="전"> 개 /
+                <input type="text" id="endQuan1"placeholder="후"> 개</td>
+              <td id="itemResult1"></td>
+            </tr>
+            <tr>
+              <td><img src="img/마후라가의%20부서진%20목걸이.png"></td>
+              <td id="price2">가격 : 390,000</td>
+              <td class="quanInput"><input type="text" id="startQuan2" placeholder="전"> 개 /
+                <input type="text" id="endQuan2"placeholder="후"> 개</td>
+              <td id="itemResult2"></td>
+            </tr>
+            <tr>
+              <td><img src="img/루드라의 끊어진 활.png"></td>
+              <td id="price3">가격 : 650,000</td>
+              <td class="quanInput"><input type="text" id="startQuan3" placeholder="전"> 개 /
+                <input type="text" id="endQuan3"placeholder="후"> 개</td>
+              <td id="itemResult3"></td>
+            </tr>
+            <tr>
+              <td><img src="img/작은 물의 속성석.png"></td>
+              <td>가격 : <input type="text"  id="price4"></td>
+              <td class="quanInput"><input type="text" id="startQuan4" placeholder="전"> 개 /
+                <input type="text" id="endQuan4"placeholder="후"> 개</td>
+              <td id="itemResult4"></td>
+            </tr>
+            <tr>
+              <td><img src="img/물의 정령석.png"></td>
+              <td>가격 : <input type="text"  id="price5"></td>
+              <td class="quanInput"><input type="text" id="startQuan5" placeholder="전"> 개 /
+                <input type="text" id="endQuan5"placeholder="후"> 개</td>
+              <td id="itemResult5"></td>
+            </tr>
+            <tr>
+              <td><img src="img/작은 불의 속성석.png"></td>
+              <td id="price6">가격 : <input type="text"></td>
+              <td class="quanInput"><input type="text" id="startQuan6" placeholder="전"> 개 /
+                <input type="text" id="endQuan6"placeholder="후"> 개</td>
+              <td id="itemResult6"></td>
+            </tr>
+            <tr>
+              <td><img src="img/정기의 구슬 조각(火).png"></td>
+              <td id="price7">가격 : <input type="text"></td>
+              <td class="quanInput"><input type="text" id="startQuan7" placeholder="전"> 개 /
+                <input type="text" id="endQuan7"placeholder="후"> 개</td>
+              <td id="itemResult7"></td>
+            </tr>
+            <tr>
+              <td><img src="img/달의 인장.png"></td>
+              <td id="price8">가격 : <input type="text"></td>
+              <td class="quanInput"><input type="text" id="startQuan8" placeholder="전"> 개 /
+                <input type="text" id="endQuan8"placeholder="후"> 개</td>
+              <td id="itemResult8"></td>
+            </tr>
+            <tr>
+              <td><img src="img/물의 인장.png"></td>
+              <td id="price9">가격 : <input type="text"></td>
+              <td class="quanInput"><input type="text" id="startQuan9" placeholder="전"> 개 /
+                <input type="text" id="endQuan9"placeholder="후"> 개</td>
+              <td id="itemResult9"></td>
+            </tr>
+            <tr>
+              <td><img src="img/불의 인장.png"></td>
+              <td id="price10">가격 : <input type="text"></td>
+              <td class="quanInput"><input type="text" id="startQuan10" placeholder="전"> 개 /
+                <input type="text" id="endQuan10"placeholder="후"> 개</td>
+              <td id="itemResult10"></td>
+            </tr>
+            <tr>
+              <td><img src="img/불의 결정체.png"></td>
+              <td id="price11">가격 : 390,000</td>
+              <td class="quanInput"><input type="text" id="startQuan11" placeholder="전"> 개 /
+                <input type="text" id="endQuan11"placeholder="후"> 개</td>
+              <td id="itemResult11"></td>
+            </tr>
+            <tr>
+              <td><img src="img/철질려.png"></td>
+              <td id="price12">가격 : 796,852</td>
+              <td class="quanInput"><input type="text" id="startQuan12" placeholder="전"> 개 /
+                <input type="text" id="endQuan12"placeholder="후"> 개</td>
+              <td id="itemResult12"></td>
+            </tr>
+            <tr>
+              <td><img src="img/바투의 손목 보호대.png"></td>
+              <td id="price13">가격 : <input type="text"></td>
+              <td class="quanInput"><input type="text" id="startQuan13" placeholder="전"> 개 /
+                <input type="text" id="endQuan13"placeholder="후"> 개</td>
+              <td id="itemResult13"></td>
+            </tr>
+            <tr>
+              <td><img src="img/다문천왕의 요대.png"></td>
+              <td id="price14">가격 : <input type="text"></td>
+              <td class="quanInput"><input type="text" id="startQuan14" placeholder="전"> 개 /
+                <input type="text" id="endQuan14"placeholder="후"> 개</td>
+              <td id="itemResult14"></td>
+            </tr>
+            <tr>
+              <td>시간당 수익 : </td>
+              <td colspan="3" id="timeByGoldResult"></td>
+            </tr>
+            <tr>
+              <td>총 수익 : </td>
+              <td colspan="3" id="totalGoldResult"></td>
+            </tr>
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" id="submitBtn">계산하기</button>
+  </div>
+</section>
+<section></section>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
