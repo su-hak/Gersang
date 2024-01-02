@@ -246,9 +246,25 @@ textarea {
 }
 
 /* 거상 css 코드 시작 점*/
+*{
+  font-family: 휴먼편지체;
+}
+
+
+#sec1 {
+  position: relative;
+}
+#title {
+  background-color: #3cb67a;
+  border-bottom: black 2px solid;
+  padding: 20px;
+}
 
 h1 {
   font-size: large;
+  position: absolute;
+  left: 10px;
+  top: 0;
 }
 
 body, html {
@@ -260,14 +276,31 @@ body, html {
   font-size: 0.5em;
 }
 
+form {
+  border-bottom: black 1px dashed;
+  padding: 20px;
+}
+
 .dropItem {
   width: 500px;
   height: 450px;
-  background: antiquewhite;
+  background: #50d392;
+  border: black 2px solid;
+}
+
+#nameMonster {
+  font-weight: 700;
+  font-size: 15px;
+  position: absolute;
+  left: 13px;
+  top: 38px;
 }
 
 #selectMonster {
   font-weight: bold;
+  position: absolute;
+  top: 55px;
+  left: 45px;
 }
 
 .exp{
@@ -319,6 +352,7 @@ table input {
   justify-content: flex-start;
   height: 50%; /* 뷰포트의 전체 높이 */
   overflow: hidden; /* .tableWrapper 내부에서 스크롤 방지 */
+  border-bottom: black 1px solid;
 }
 
 #imageWrapper {
@@ -334,11 +368,25 @@ table input {
   overflow-y: auto; /* 스크롤 가능하도록 설정 */
 }
 
+.scollableTable::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scollableTable::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.scollableTable::-webkit-scrollbar-track {
+   width: 10px;
+   background-color: darkgrey;
+   border-radius: 40px;
+ }
 /* #rudra-img와 #rudra에 대한 규칙이 더 이상 필요하지 않으므로 삭제합니다. */
 
 #rudra {
   height: 100%;
-  overflow-y: auto;
 }
 
 #rudra img {
@@ -346,12 +394,17 @@ table input {
   width: 30px;
 }
 
+#exp {
+  position: absolute;
+  left: 10px;
+}
+
 #expTime {
   width: 500px;
 }
 
 #expTime input {
-  width: 14px;
+  width: 19px;
 }
 
 #expCalc {
@@ -366,3 +419,8 @@ table input {
   font-weight: 700;
 }
 
+#submitBtn {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+}

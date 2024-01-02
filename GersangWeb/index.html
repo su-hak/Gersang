@@ -21,12 +21,14 @@
 </head>
 
 <body>
-<section>
-  <div>
+<section id="sec1">
     <div class="dropItem">
-      <h1>사냥 측정기</h1>
+        <div id="title">
+            <h1>사냥 측정기</h1>
+        </div>
       <form>
-        <select id="selectMonster">
+          <p id="nameMonster">이름 </p>
+          <select id="selectMonster">
           <option value="default">몬스터를 고르세요.</option>
           <option value="rudra">루드라의 혼(水)</option>
           <option value="gundarba">건달바의 혼(水)</option>
@@ -205,14 +207,13 @@
            <b>end</b> <input type="text" id="endExp"> =
             <span id="resultExp"></span></br></br>
 
-            <span id="resultExpPerHour"></span>
+            <span id="resultExpPerHour">시간 당 &nbsp; exp 획득 하였습니다.</span>
         </div>
       </div>
+          <button type="submit" id="submitBtn">계산하기</button>
       </div>
     </div>
 
-    <button type="submit" id="submitBtn">계산하기</button>
-  </div>
 </section>
 <section></section>
   <script src="js/app.js"></script>
