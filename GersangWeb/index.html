@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" xmlns="http://www.w3.org/1999/html">
 
 <head>
   <meta charset="utf-8">
@@ -24,44 +24,14 @@
 <section>
   <div>
     <div class="dropItem">
-      <h2>사냥 측정기</h2>
+      <h1>사냥 측정기</h1>
       <form>
         <select id="selectMonster">
           <option value="default">몬스터를 고르세요.</option>
           <option value="rudra">루드라의 혼(水)</option>
           <option value="gundarba">건달바의 혼(水)</option>
         </select>
-      </form>
-      <div class="exp">
-        <table id="exp">
-          <tr>
-            <th>시작 시간</th>
-            <th>끝난 시간</th>
-            <th>총 사냥 시간</th>
-          </tr>
-          <tr>
-            <td><input type="text" id="startHour"placeholder="시"> :
-            <input type="text" id="startMin"placeholder="분"> </td>
-            <td><input type="text" id="endHour" placeholder="시"> :
-            <input type="text" id="endMin" placeholder="분"> =</td>
-            <td><span id="resultTime"></span></td>
-          </tr>
-          <tr>
-            <th>시작 경험치</th>
-            <th>끝난 경험치</th>
-            <th>총 획득 경험치</th>
-          </tr>
-          <tr>
-            <td><input type="text" id="startExp"></td>
-            <td><input type="text" id="endExp"> =</td>
-            <td><span id="resultExp"></span></td>
-          </tr>
-          <tr>
-            <td>시간당 획득 경험치</td>
-            <td id="resultExpPerHour" colspan="3"></td>
-          </tr>
-        </table>
-      </div>
+      </form></br>
       <div class="tableWrapper">
         <!-- 드롭 다운 실행 시 이미지 생성-->
         <div id="imageWrapper" style="">
@@ -219,7 +189,25 @@
             </tr>
           </table>
         </div>
+        </div></br>
+      <div class="exp">
+        <div id="exp">
+        <div id="expTime">
+            <b>start</b> <input type="text" id="startHour"placeholder="시"> :
+              <input type="text" id="startMin"placeholder="분">
+           <b>end</b> <input type="text" id="endHour" placeholder="시"> :
+              <input type="text" id="endMin" placeholder="분"> =
+            <span id="resultTime"></span>
+        </div></br>
+
+          <div id="expCalc">
+           <b>start</b> <input type="text" id="startExp">
+           <b>end</b> <input type="text" id="endExp"> =
+            <span id="resultExp"></span></br></br>
+
+            <span id="resultExpPerHour"></span>
         </div>
+      </div>
       </div>
     </div>
 

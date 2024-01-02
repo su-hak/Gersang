@@ -246,17 +246,28 @@ textarea {
 }
 
 /* 거상 css 코드 시작 점*/
+
+h1 {
+  font-size: large;
+}
+
 body, html {
   height: 100%; /* 전체 높이 설정 */
   margin: 0; /* 기본 마진  req제거 */
   display: flex; /* flexbox 레이아웃 적용 */
   justify-content: center; /* 가로축 중앙 정렬 */
   align-items: center; /* 세로축 중앙 정렬 */
+  font-size: 0.5em;
 }
 
 .dropItem {
   width: 500px;
   height: 450px;
+  background: antiquewhite;
+}
+
+#selectMonster {
+  font-weight: bold;
 }
 
 .exp{
@@ -271,9 +282,6 @@ body, html {
   width: 50%;
 }
 
-#exp tbody{
-}
-
 #imageWrapper img {
   vertical-align: bottom;
 }
@@ -284,14 +292,6 @@ table td {
   text-align: center;
   padding: 2px;
   border: 1px solid black;
-}
-
-table th {
-  font-size: 0.5em;
-}
-
-table td {
-  font-size: 0.5em;
 }
 
 table input {
@@ -346,4 +346,23 @@ table input {
   width: 30px;
 }
 
+#expTime {
+  width: 500px;
+}
+
+#expTime input {
+  width: 14px;
+}
+
+#expCalc {
+  width: 500px;
+}
+
+#expCalc input {
+  width: 100px;
+}
+
+#resultExpPerHour {
+  font-weight: 700;
+}
 

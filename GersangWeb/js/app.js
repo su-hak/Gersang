@@ -6,7 +6,7 @@ function exp(){
 
   var result = eExp - sExp;
   // console.log(result,'result');
-  resultExp.text("총 : " + result.toLocaleString()+  " 경험치 획득 하였습니다.");
+  resultExp.text("총 " + result.toLocaleString()+  "exp 획득 하였습니다.");
 
 }
 
@@ -60,8 +60,8 @@ function calculateExpPerHour() {
   var goldPerHour = parseInt($('#totalGoldResult').text().replace(/,/g, '')) / (timeDiff / 60);
   console.log(goldPerHour, '나누기 전 ')
 
-  resultExpPerHour.text("시간당 : " + Math.round(expPerHour).toLocaleString()+ " 경험치 획득 하였습니다.");
-  timeByGoldResult.text("시간당 : " + Math.round(goldPerHour).toLocaleString()+ " 원 획득 하였습니다.");
+  resultExpPerHour.text("시간 당 " + Math.round(expPerHour).toLocaleString()+ "exp 획득 하였습니다.");
+  timeByGoldResult.text("시간 당 " + Math.round(goldPerHour).toLocaleString()+ "원 획득 하였습니다.");
 }
 
 
