@@ -67,31 +67,48 @@ function calculateExpPerHour() {
 
 // 아이템 값 계산 목록
 function item(priceClass, startQuanClass, endQuanClass, resultClass) {
+  var priceElement = document.getElementsByClassName(priceClass)[0];
+  var priceText = priceElement.innerText;  // "가격 : 476,665"
+  var priceNumber = priceText.replace("가격 : ", "").replace(/,/g, "");  // "476665"
+  var price = parseInt(priceNumber, 10);  // 476665
 
-  var priceElement = document.getElementsByClassName(priceClass);
-  var price;
-
-  // 가격 정보가 텍스트인 경우와 input 필드인 경우를 구분
-  if (priceElement.tagName.toLowerCase() === 'input') {
-    // 콤마 제거 후 숫자로 변환, 없으면 0
-    price = priceElement.value ? parseInt(priceElement.value.replace(/,/g, ''), 10) : 0;
-  } else {
-    price = priceElement.innerText;
-    price = price.replace("가격 : ", "").replace(",", ""); // 가격에서 문자 제거
-    price = price ? parseInt(price, 10): 0; // 숫자로 변환
-  }
-
-  var startQuantity = document.getElementsByClassName(startQuanClass).value; // 수량 값 가져오기
-  var endQuantity = document.getElementsByClassName(endQuanClass).value; // 수량 값 가져오기
+  var startQuantity = document.getElementsByClassName(startQuanClass)[0].value;
+  var endQuantity = document.getElementsByClassName(endQuanClass)[0].value;
 
   var quantity = endQuantity - startQuantity;
 
-  // 결과 계산 후 출력
   var result = price * quantity;
-  document.getElementsByClassName(resultClass).innerText = "💰 : " + result.toLocaleString(); // 결과에 콤마 추가
+  document.getElementsByClassName(resultClass)[0].innerText = "💰 : " + result.toLocaleString();
 
-  return result; // 계산된 결과 반환
+  return result;
 }
+
+// function item(priceClass, startQuanClass, endQuanClass, resultClass) {
+//
+//   var priceElement = document.getElementsByClassName(priceClass);
+//   var price;
+//
+//   // 가격 정보가 텍스트인 경우와 input 필드인 경우를 구분
+//   if (priceElement.tagName.toLowerCase() === 'input') {
+//     // 콤마 제거 후 숫자로 변환, 없으면 0
+//     price = priceElement.value ? parseInt(priceElement.value.replace(/,/g, ''), 10) : 0;
+//   } else {
+//     price = priceElement.innerText;
+//     price = price.replace("가격 : ", "").replace(",", ""); // 가격에서 문자 제거
+//     price = price ? parseInt(price, 10): 0; // 숫자로 변환
+//   }
+//
+//   var startQuantity = document.getElementsByClassName(startQuanClass).value; // 수량 값 가져오기
+//   var endQuantity = document.getElementsByClassName(endQuanClass).value; // 수량 값 가져오기
+//
+//   var quantity = endQuantity - startQuantity;
+//
+//   // 결과 계산 후 출력
+//   var result = price * quantity;
+//   document.getElementsByClassName(resultClass).innerText = "💰 : " + result.toLocaleString(); // 결과에 콤마 추가
+//
+//   return result; // 계산된 결과 반환
+// }
 
 // input입력 시 숫자 천 단위로 ','표시
 $('input').on('input', function(e) {
