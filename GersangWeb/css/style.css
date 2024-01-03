@@ -250,8 +250,7 @@ textarea {
 @import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@500&display=swap');
 
 * {
-  /*font-family: 휴먼편지체;*/
-  font-family: 'Genos', sans-serif;
+  font-family: 휴먼편지체;
 }
 
 #sec1 {
@@ -387,10 +386,6 @@ table input {
   font-weight: bold;
 }
 
-#rudra-img{
-  height: 100%;
-}
-
 .tableWrapper {
   display: flex;
   flex-direction: row; /* 이미지와 테이블을 세로로 배열 */
@@ -406,6 +401,10 @@ table input {
   top: 0; /* 상단과의 거리 */
   height: 100%;
   z-index: 10; /* 다른 콘텐츠 위에 표시되도록 설정 */
+}
+
+#imageWrapper img{
+  height: 100%;
 }
 
 .scollableTable {
@@ -429,10 +428,10 @@ table input {
 }
 
 .scollableTable::-webkit-scrollbar-track {
-   width: 10px;
-   background-color: darkgrey;
-   border-radius: 40px;
- }
+  width: 10px;
+  background-color: darkgrey;
+  border-radius: 40px;
+}
 /* #rudra-img와 #rudra에 대한 규칙이 더 이상 필요하지 않으므로 삭제합니다. */
 
 #rudra {

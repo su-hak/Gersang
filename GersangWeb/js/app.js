@@ -66,22 +66,32 @@ function calculateExpPerHour() {
 
 
 // 아이템 값 계산 목록
-function item(priceClass, startQuanClass, endQuanClass, resultClass) {
-  var priceElement = document.getElementsByClassName(priceClass)[0];
-  var priceText = priceElement.innerText;  // "가격 : 476,665"
-  var priceNumber = priceText.replace("가격 : ", "").replace(/,/g, "");  // "476665"
-  var price = parseInt(priceNumber, 10);  // 476665
+function item(monsterId, priceClass, startQuanClass, endQuanClass, resultClass) {
+  var priceElement = document.querySelector(`#${monsterId} .${priceClass}`);
+  var price;
 
-  var startQuantity = document.getElementsByClassName(startQuanClass)[0].value;
-  var endQuantity = document.getElementsByClassName(endQuanClass)[0].value;
+  // 가격 정보가 텍스트인 경우와 input 필드인 경우를 구분
+  if (priceElement.tagName.toLowerCase() === 'input') {
+    // 콤마 제거 후 숫자로 변환, 없으면 0
+    price = priceElement.value ? parseInt(priceElement.value.replace(/,/g, ''), 10) : 0;
+  } else {
+    var priceText = priceElement.innerText;
+    price = priceText.replace("가격 : ", "").replace(",", ""); // 가격에서 문자 제거
+    price = price ? parseInt(price, 10): 0; // 숫자로 변환
+  }
+
+  var startQuantity = document.querySelector(`#${monsterId} .${startQuanClass}`).value; // 수량 값 가져오기
+  var endQuantity = document.querySelector(`#${monsterId} .${endQuanClass}`).value; // 수량 값 가져오기
 
   var quantity = endQuantity - startQuantity;
 
+  // 결과 계산 후 출력
   var result = price * quantity;
-  document.getElementsByClassName(resultClass)[0].innerText = "💰 : " + result.toLocaleString();
+  document.querySelector(`#${monsterId} .${resultClass}`).innerText = "💰 : " + result.toLocaleString(); // 결과에 콤마 추가
 
-  return result;
+  return result; // 계산된 결과 반환
 }
+
 
 // function item(priceClass, startQuanClass, endQuanClass, resultClass) {
 //
@@ -161,11 +171,12 @@ window.onload = function() {
 $('#submitBtn').click(function (){
   exp();
   time();
+  var selectedMonster = document.getElementById('selectMonster').value;
   var totalGold = 0; // 총 수익 초기 값으로 변수 선언
 
   for (var i = 0; i < 15; i++) {
     // item('price' + i, 'startQuan' + i, 'endQuan' + i, 'itemResult' + i);
-    totalGold += item('price' + i, 'startQuan' + i, 'endQuan' + i, 'itemResult' + i);
+    totalGold += item(selectedMonster,'price' + i, 'startQuan' + i, 'endQuan' + i, 'itemResult' + i);
   }
   document.getElementById('totalGoldResult').innerText = "💡 총 " + totalGold.toLocaleString() + "원 획득"; // 결과에 콤마 추가
 
