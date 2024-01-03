@@ -6,7 +6,7 @@ function exp(){
 
   var result = eExp - sExp;
   // console.log(result,'result');
-  resultExp.text("총 " + result.toLocaleString()+  "exp 획득 하였습니다.");
+  resultExp.text("총 " + result.toLocaleString()+  "exp");
 
 }
 
@@ -29,7 +29,7 @@ function time() {
   var hours = Math.floor(timeDiff / 60);
   var minutes = timeDiff % 60;
 
-  resultTime.text(hours.toString() + "시간 " + minutes.toString() + "분 걸렸습니다.");
+  resultTime.text("총 " + hours.toString() + "시간 " + minutes.toString() + "분 소요.");
 }
 
 // 시간당 경험치 및 골드 구하기
@@ -56,19 +56,19 @@ function calculateExpPerHour() {
   // 시간 당 exp 계산
   var expPerHour = totalExp / (timeDiff / 60);
 
-  // 시간 당 수익 계산
-  var goldPerHour = parseInt($('#totalGoldResult').text().replace(/,/g, '')) / (timeDiff / 60);
+  // 시간 당 수익 계산 .replace(/[^0-9]/g, '') -> 문자열 제거/ .replace(/,/g, '') -> 숫자제거
+  var goldPerHour = parseInt($('#totalGoldResult').text().replace(/[^0-9]/g, '').replace(/,/g, '')) / (timeDiff / 60);
   console.log(goldPerHour, '나누기 전 ')
 
-  resultExpPerHour.text("시간 당 " + Math.round(expPerHour).toLocaleString()+ "exp 획득 하였습니다.");
-  timeByGoldResult.text("시간 당 " + Math.round(goldPerHour).toLocaleString()+ "원 획득 하였습니다.");
+  resultExpPerHour.text("💡 시간 당 " + Math.round(expPerHour).toLocaleString() + "exp 획득");
+  timeByGoldResult.text("💡 시간 당 " + Math.round(goldPerHour).toLocaleString() + "원 획득");
 }
 
 
 // 아이템 값 계산 목록
-function item(priceID, startQuanId, endQuanID, resultID) {
+function item(priceClass, startQuanClass, endQuanClass, resultClass) {
 
-  var priceElement = document.getElementById(priceID);
+  var priceElement = document.getElementsByClassName(priceClass);
   var price;
 
   // 가격 정보가 텍스트인 경우와 input 필드인 경우를 구분
@@ -81,14 +81,14 @@ function item(priceID, startQuanId, endQuanID, resultID) {
     price = price ? parseInt(price, 10): 0; // 숫자로 변환
   }
 
-  var startQuantity = document.getElementById(startQuanId).value; // 수량 값 가져오기
-  var endQuantity = document.getElementById(endQuanID).value; // 수량 값 가져오기
+  var startQuantity = document.getElementsByClassName(startQuanClass).value; // 수량 값 가져오기
+  var endQuantity = document.getElementsByClassName(endQuanClass).value; // 수량 값 가져오기
 
   var quantity = endQuantity - startQuantity;
 
   // 결과 계산 후 출력
   var result = price * quantity;
-  document.getElementById(resultID).innerText = "결과 : " + result.toLocaleString(); // 결과에 콤마 추가
+  document.getElementsByClassName(resultClass).innerText = "💰 : " + result.toLocaleString(); // 결과에 콤마 추가
 
   return result; // 계산된 결과 반환
 }
@@ -150,7 +150,7 @@ $('#submitBtn').click(function (){
     // item('price' + i, 'startQuan' + i, 'endQuan' + i, 'itemResult' + i);
     totalGold += item('price' + i, 'startQuan' + i, 'endQuan' + i, 'itemResult' + i);
   }
-  document.getElementById('totalGoldResult').innerText =  totalGold.toLocaleString(); // 결과에 콤마 추가
+  document.getElementById('totalGoldResult').innerText = "💡 총 " + totalGold.toLocaleString() + "원 획득"; // 결과에 콤마 추가
 
   calculateExpPerHour();
 })

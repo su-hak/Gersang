@@ -246,14 +246,20 @@ textarea {
 }
 
 /* 거상 css 코드 시작 점*/
-*{
-  font-family: 휴먼편지체;
-}
 
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@500&display=swap');
+
+* {
+  /*font-family: 휴먼편지체;*/
+  font-family: 'Genos', sans-serif;
+}
 
 #sec1 {
   position: relative;
 }
+
+
+
 #title {
   background-color: #3cb67a;
   border-bottom: black 2px solid;
@@ -281,9 +287,17 @@ form {
   padding: 20px;
 }
 
+form p {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-weight: bold;
+  font-size: 10px;
+}
+
 .dropItem {
   width: 500px;
-  height: 450px;
+  height: 500px;
   background: #50d392;
   border: black 2px solid;
 }
@@ -296,12 +310,42 @@ form {
   top: 38px;
 }
 
+input {
+  font-weight: bold;
+  top: 55px;
+  left: 8px;
+  color: #03e9f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  overflow: hidden;
+  background-color: black;
+}
+
+input:hover {
+  background: #03e9f4;
+  color: #050801;
+}
+
 #selectMonster {
   font-weight: bold;
   position: absolute;
   top: 55px;
-  left: 45px;
+  left: 8px;
+  color: #03e9f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  overflow: hidden;
+  background-color: black;
+  border-radius: 5px;
 }
+
+#selectMonster:hover {
+  background: #03e9f4;
+  color: #050801;
+}
+
 
 .exp{
   width: 100%;
@@ -309,6 +353,8 @@ form {
 
 .exp input {
   width: 30px;
+  height: 10px;
+  font-size: 10px;
 }
 
 #exp {
@@ -328,16 +374,16 @@ table td {
 }
 
 table input {
-  width: 50px;
-  height: 5px;
-  font-size: 7px;
+  width: 58px;
+  height: 10px;
+  font-size: 9px;
   font-weight: bold;
   text-align: center;
 }
 
 .quanInput input{
-  width: 20px;
-  font-size: 7px;
+  width: 25px;
+  font-size: 10px;
   font-weight: bold;
 }
 
@@ -366,6 +412,10 @@ table input {
   width: 100%;
   height: 100%; /* 이미지 높이를 뺀 나머지 높이를 사용 */
   overflow-y: auto; /* 스크롤 가능하도록 설정 */
+}
+
+.scollableTable th {
+  width: 100px;
 }
 
 .scollableTable::-webkit-scrollbar {
@@ -397,10 +447,12 @@ table input {
 #exp {
   position: absolute;
   left: 10px;
+  margin-top: 10px;
 }
 
 #expTime {
   width: 500px;
+  padding-bottom: 10px;
 }
 
 #expTime input {
@@ -415,12 +467,146 @@ table input {
   width: 100px;
 }
 
-#resultExpPerHour {
+#resultTime {
   font-weight: 700;
 }
 
+#resultExp {
+  font-weight: 700;
+}
+
+.whiteBorderBox {
+  margin-top: 5px;
+  position: absolute;
+  border: white 1px solid;
+  width: 283px;
+  height: 60px;
+  border-radius: 3%;
+  margin-top: 10px;
+}
+
+#resultExpPerHour {
+  font-weight: 700;
+  padding-bottom: 5px ;
+  display: block;
+  padding: 5px 0;
+  left: 20px;
+}
+
+#timeByGoldResult {
+  font-weight: 700;
+  display: block;
+  left: 20px;
+}
+
+#totalGoldResult {
+  font-weight: 700;
+  display: block;
+  padding-top: 5px;
+}
+
+/* 계산하기 버튼 디자인 */
 #submitBtn {
   position: absolute;
   right: 30px;
   bottom: 20px;
+  color: #03e9f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  overflow: hidden;
+  background-color: black;
+  border-radius: 5px;
+}
+
+#submitBtn:hover {
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4,
+  0 0 25px #03e9f4,
+  0 0 50px #03e9f4,
+  0 0 200px #03e9f4;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+  #submitBtn:nth-child(1){
+    filter: hue-rotate(270deg);
+  }
+  #submitBtn:nth-child(2){
+    filter: hue-rotate(110deg);
+  }
+  #submitBtn span{
+    position: absolute;
+    display: block;
+  }
+
+#submitBtn span:nth-child(1){
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#03e9f4);
+  animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+  0%{
+    left: -100%;
+  }
+  50%,100%{
+    left: 100%;
+  }
+}
+#submitBtn span:nth-child(2){
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#03e9f4);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes animate2{
+  0%{
+    top: -100%;
+  }
+  50%,100%{
+    top: 100%;
+  }
+}
+#submitBtn span:nth-child(3){
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,#03e9f4);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.50s;
+}
+@keyframes animate3{
+  0%{
+    right: -100%;
+  }
+  50%,100%{
+    right: 100%;
+  }
+}
+
+
+#submitBtn span:nth-child(4){
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#03e9f4);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%, 100% {
+    bottom: 100%;
+  }
 }
