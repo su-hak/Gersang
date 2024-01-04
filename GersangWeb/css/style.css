@@ -419,12 +419,12 @@ h1 {
   top: 0;
 }
 
-form {
+.form {
   border-bottom: black 1px dashed;
   padding: 20px;
 }
 
-form p {
+.form p {
   position: absolute;
   top: -8px;
   right: 8px;
@@ -523,7 +523,7 @@ table input {
   font-weight: bold;
 }
 
-.tableWrapper {
+#tableWrapper {
   display: flex;
   flex-direction: row; /* 이미지와 테이블을 세로로 배열 */
   align-items: flex-start;
@@ -752,6 +752,34 @@ table input {
 
 .inchantItem .title {
   background-color: #40A19DFF;
+}
+
+#inchantImageWrapper {
+  position: sticky; /* 스크롤 시 이미지가 상단에 고정되도록 설정 */
+  top: 0; /* 상단과의 거리 */
+  height: 100%;
+  z-index: 10; /* 다른 콘텐츠 위에 표시되도록 설정 */
+}
+
+#inchantImageWrapper img{
+  height: 100%;
+}
+
+#inchantImageWrapper {
+  position: sticky; /* 스크롤 시 이미지가 상단에 고정되도록 설정 */
+  top: 0; /* 상단과의 거리 */
+  height: 100%;
+  z-index: 10; /* 다른 콘텐츠 위에 표시되도록 설정 */
+}
+
+#inchantTableWrapper {
+  display: flex;
+  flex-direction: row; /* 이미지와 테이블을 세로로 배열 */
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 50%; /* 뷰포트의 전체 높이 */
+  overflow: hidden; /* .tableWrapper 내부에서 스크롤 방지 */
+  border-bottom: black 1px solid;
 }
 
 #selectInchant {

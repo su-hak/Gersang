@@ -1,37 +1,32 @@
-window.onload = function() {
+window.addEventListener("load", function () {
     let selectInchant = document.getElementById("selectInchant");
-    let tables = document.querySelectorAll("table");
-    let images = document.querySelectorAll("#imageWrapper img");
-    let divs = document.querySelector("#exp");
+    let sec2 = document.getElementById("sec2");
+    let tables2 = sec2.querySelectorAll("table");
+    let images2 = sec2.querySelectorAll("#inchantImageWrapper img");
 
-    function hideAll(elements) {
+
+    function hideAllInchant(elements) {
         elements.forEach(el => el.style.display = "none");
     }
 
-    function showElement(id) {
+    function showElementChant(id) {
         let element = document.getElementById(id);
         if (element) {
             element.style.display = "block";
         }
     }
 
-    hideAll(tables);
-    hideAll(images);
-    divs.style.display = "none";
-    showElement("default");
+    hideAllInchant(tables2);
+    hideAllInchant(images2);
+    showElementChant("inchantDefault-img");
 
     selectInchant.addEventListener("change", function() {
-        hideAll(tables);
-        hideAll(images);
-        if (selectInchant.value !== "default") {
-            divs.style.display = "block";
-        } else {
-            divs.style.display = "none";
-        }
-        showElement(selectInchant.value);
-        showElement(selectInchant.value + "-img");
+        hideAllInchant(tables2);
+        hideAllInchant(images2);
+        showElementChant(selectInchant.value);
+        showElementChant(selectInchant.value + "-img");
     });
 
-    selectInchant.value = "default";
-    showElement("default");
-}
+    selectInchant.value = "inchantDefault";
+    showElementChant("inchantDefault");
+});
