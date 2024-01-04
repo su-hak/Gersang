@@ -253,25 +253,6 @@ textarea {
   font-family: 휴먼편지체;
 }
 
-#sec1 {
-  position: relative;
-}
-
-
-
-#title {
-  background-color: #3cb67a;
-  border-bottom: black 2px solid;
-  padding: 20px;
-}
-
-h1 {
-  font-size: large;
-  position: absolute;
-  left: 10px;
-  top: 0;
-}
-
 body, html {
   height: 100%; /* 전체 높이 설정 */
   margin: 0; /* 기본 마진  req제거 */
@@ -281,6 +262,163 @@ body, html {
   font-size: 0.5em;
 }
 
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+
+/* 메뉴 바 Start */
+.content {
+  display: none;
+}
+
+nav {
+  display: flex; /* flexbox 레이아웃 적용 */
+  justify-content: center; /* 가로축 중앙 정렬 */
+  align-items: center; /* 세로축 중앙 정렬 */
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.mainMenu {
+  right: 30px;
+  bottom: 20px;
+  color: #03e9f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  overflow: hidden;
+  background-color: black;
+  border-radius: 5px;display: flex;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  filter: hue-rotate(70deg);
+}
+
+.mainMenu a {
+  color: #03e9f4;
+}
+
+.mainMenu:hover a {
+  color: #050801;
+}
+
+.mainMenu:hover {
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4,
+  0 0 25px #03e9f4,
+  0 0 50px #03e9f4,
+  0 0 200px #03e9f4;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.mainMenu span{
+  position: absolute;
+  display: block;
+}
+
+.mainMenu span:nth-child(1){
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#03e9f4);
+  animation: animate1 1.5s linear infinite;
+}
+@keyframes animate1{
+  0%{
+    left: -100%;
+  }
+  50%,100%{
+    left: 100%;
+  }
+}
+.mainMenu span:nth-child(2){
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#03e9f4);
+  animation: animate2 1.5s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes animate2{
+  0%{
+    top: -100%;
+  }
+  50%,100%{
+    top: 100%;
+  }
+}
+.mainMenu span:nth-child(3){
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,#03e9f4);
+  animation: animate3 1.5s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes animate3{
+  0%{
+    right: -100%;
+  }
+  50%,100%{
+    right: 100%;
+  }
+}
+
+
+.mainMenu span:nth-child(4){
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#03e9f4);
+  animation: animate4 1.5s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%, 100% {
+    bottom: 100%;
+  }
+}
+
+/* 메뉴 바 End */
+
+/* 섹션 1 Start */
+#sec1 {
+  display: block;
+}
+
+.title {
+  background-color: #3cb67a;
+  border-bottom: black 2px solid;
+  padding: 20px 0 30px 0 ;
+}
+
+h1 {
+  font-size: large;
+  position: absolute;
+  left: 10px;
+  top: 0;
+}
+
 form {
   border-bottom: black 1px dashed;
   padding: 20px;
@@ -288,31 +426,22 @@ form {
 
 form p {
   position: absolute;
-  top: 0;
-  right: 10px;
+  top: -8px;
+  right: 8px;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .dropItem {
+  position: relative;
   width: 500px;
   height: 500px;
   background: #50d392;
   border: black 2px solid;
 }
 
-#nameMonster {
-  font-weight: 700;
-  font-size: 15px;
-  position: absolute;
-  left: 13px;
-  top: 38px;
-}
-
 input {
   font-weight: bold;
-  top: 55px;
-  left: 8px;
   color: #03e9f4;
   text-decoration: none;
   text-transform: uppercase;
@@ -326,10 +455,18 @@ input:hover {
   color: #050801;
 }
 
+input::placeholder {
+  color: #03e9f4;
+}
+
+input:hover::placeholder {
+  color: black;
+}
+
 #selectMonster {
   font-weight: bold;
   position: absolute;
-  top: 55px;
+  top: 60px;
   left: 8px;
   color: #03e9f4;
   text-decoration: none;
@@ -407,6 +544,11 @@ table input {
   height: 100%;
 }
 
+.scollableTable img {
+  height: 30px;
+  width: 30px;
+}
+
 .scollableTable {
   width: 100%;
   height: 100%; /* 이미지 높이를 뺀 나머지 높이를 사용 */
@@ -431,16 +573,6 @@ table input {
   width: 10px;
   background-color: darkgrey;
   border-radius: 40px;
-}
-/* #rudra-img와 #rudra에 대한 규칙이 더 이상 필요하지 않으므로 삭제합니다. */
-
-#rudra {
-  height: 100%;
-}
-
-#rudra img {
-  height: 30px;
-  width: 30px;
 }
 
 #exp {
@@ -505,7 +637,8 @@ table input {
 }
 
 /* 계산하기 버튼 디자인 */
-#submitBtn {
+#submitBtn,
+#inchantSubmitBtn {
   position: absolute;
   right: 30px;
   bottom: 20px;
@@ -517,6 +650,7 @@ table input {
   overflow: hidden;
   background-color: black;
   border-radius: 5px;
+  filter: hue-rotate(110deg);
 }
 
 #submitBtn:hover {
@@ -529,12 +663,6 @@ table input {
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
-  #submitBtn:nth-child(1){
-    filter: hue-rotate(270deg);
-  }
-  #submitBtn:nth-child(2){
-    filter: hue-rotate(110deg);
-  }
   #submitBtn span{
     position: absolute;
     display: block;
@@ -593,6 +721,164 @@ table input {
 
 
 #submitBtn span:nth-child(4){
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#03e9f4);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%, 100% {
+    bottom: 100%;
+  }
+}
+
+/* 섹션1 End */
+
+/*  섹션 2 End */
+
+.inchantItem {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: #50d3cf;
+  border: black 2px solid;
+}
+
+.inchantItem .title {
+  background-color: #40A19DFF;
+}
+
+#selectInchant {
+  font-weight: bold;
+  position: absolute;
+  top: 60px;
+  left: 8px;
+  color: #4c83f3;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 5px;
+}
+
+#selectInchant:hover {
+  background: #4c83f3;
+  color: white;
+}
+
+#sec2 input {
+  font-weight: bold;
+  color: #4c83f3;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  overflow: hidden;
+  background-color: white;
+}
+
+#sec2 input:hover {
+  background: #4c83f3;
+  color: white;
+}
+
+#sec2 input::placeholder {
+  color: #4c83f3;
+}
+
+#sec2 input:hover::placeholder {
+  color: white;
+}
+
+#inchantSubmitBtn {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  color: #03e9f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 5px;
+  filter: hue-rotate(40deg);
+}
+
+#inchantSubmitBtn:hover {
+  background: #03e9f4;
+  color: white;
+  box-shadow: 0 0 5px #03e9f4,
+  0 0 25px #03e9f4,
+  0 0 50px #03e9f4,
+  0 0 200px #03e9f4;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+#inchantSubmitBtn span{
+  position: absolute;
+  display: block;
+}
+
+#inchantSubmitBtn span:nth-child(1){
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#03e9f4);
+  animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+  0%{
+    left: -100%;
+  }
+  50%,100%{
+    left: 100%;
+  }
+}
+#inchantSubmitBtn span:nth-child(2){
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#03e9f4);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes animate2{
+  0%{
+    top: -100%;
+  }
+  50%,100%{
+    top: 100%;
+  }
+}
+#inchantSubmitBtn span:nth-child(3){
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,#03e9f4);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.50s;
+}
+@keyframes animate3{
+  0%{
+    right: -100%;
+  }
+  50%,100%{
+    right: 100%;
+  }
+}
+
+
+#inchantSubmitBtn span:nth-child(4){
   bottom: -100%;
   left: 0;
   width: 2px;

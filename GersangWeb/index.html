@@ -22,13 +22,24 @@
 </head>
 
 <body>
-<section id="sec1">
+<section id="sec1" class="content">
+    <nav>
+        <ul class="mainMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <li><a href="#sec1">사냥 측정기</a></li>
+            <li><a href="#sec2">주술 계산기</a></li>
+            <li><a href="#sec3">사냥 측정기</a></li>
+            <li><a href="#sec4">사냥 측정기</a></li>
+        </ul>
+    </nav>
     <div class="dropItem">
-        <div id="title">
+        <div class="title">
             <h1>🏹사냥 측정기</h1>
         </div>
       <form>
-          <p id="nameMonster"></p>
           <select id="selectMonster">
               <span></span>
               <span></span>
@@ -57,7 +68,7 @@
             <th>결과</th>
           </tr>
             <tr>
-                <td><img src="img/오래된 등껍질.png"><</td>
+                <td><img src="img/오래된 등껍질.png"></td>
                 <td class="price0">가격 : 476,665</td>
                 <td class="quanInput"><input type="text" class="startQuan0" placeholder="전"> /
                     <input type="text" class="endQuan0"placeholder="후"></td>
@@ -320,9 +331,92 @@
               계산하기</button>
       </div>
     </div>
-
 </section>
-<section></section>
+<section id="sec2" class="content">
+    <nav>
+        <ul class="mainMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <li><a href="#sec1">사냥 측정기</a></li>
+            <li><a href="#sec2">주술 계산기</a></li>
+            <li><a href="#sec3">사냥 측정기</a></li>
+            <li><a href="#sec4">사냥 측정기</a></li>
+        </ul>
+    </nav>
+    <div class="inchantItem">
+        <div class="title">
+            <h1>주술 계산기</h1>
+        </div>
+        <form>
+            <select id="selectInchant">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <option value="default">주술을 고르세요.</option>
+                <option value="강인한 흑요석">강인한 흑요석</option>
+                <option value="신속한 사금석">신속한 사금석</option>
+                <option value="끈기의 백수정">끈기의 백수정</option>
+                <option value="신비한 월장석">신비한 월장석</option>
+            </select>
+            <p>ver1.0</p>
+        </form></br>
+        <div class="tableWrapper">
+            <!-- 드롭 다운 실행 시 이미지 생성-->
+            <div class="imageWrapper" style="">
+                <img id="신속한 사금석-img" src="img/신속한 사금석.png" alt="신속한 사금석" width="100%">
+            </div>
+            <!-- 드롭 다운 실행 시 테이블 생성-->
+            <div class="scollableTable">
+                <table id="default"></table>
+                <table id="신속한 사금석">
+                    <tr>
+                        <th>아이템</th>
+                        <th>가격</th>
+                        <th>수량</th>
+                        <th>결과</th>
+                    </tr>
+                    <tr>
+                        <td><img src="img/신속한 주술 비법.png"></td>
+                        <td><input type="text"  class="price0" placeholder="가격"></td>
+                        <td class="quanInput"><input type="text" class="startQuan0" placeholder="전">  /
+                            <input type="text" class="endQuan0"placeholder="후"> </td>
+                        <td class="itemResult0"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="exp">
+            <div id="exp">
+                <div id="expTime">
+                    <b>• start</b> <input type="text" id="startHour"placeholder="시"> :
+                    <input type="text" id="startMin"placeholder="분">
+                    <b>• end</b> <input type="text" id="endHour" placeholder="시"> :
+                    <input type="text" id="endMin" placeholder="분"> =
+                    <span id="resultTime"></span>
+                </div>
+
+                <div id="expCalc">
+                    <b>• start</b> <input type="text" id="startExp" placeholder="시작 경험치">
+                    <b>• end</b> <input type="text" id="endExp" placeholder="총 경험치"> = <span id="resultExp"></span>
+                    <div class="whiteBorderBox">
+                        <span id="resultExpPerHour">💡 시간 당 &nbsp; exp 획득 하였습니다.</span>
+                        <span id="timeByGoldResult">💡 시간 당 &nbsp; 원 획득 하였습니다.</span>
+                        <span id="totalGoldResult">💡 총 &nbsp; 원 획득 하였습니다.</span>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="inchantSubmitBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                계산하기</button>
+        </div>
+    </div>
+</section>
   <script src="js/app.js"></script>
 
 </body>
