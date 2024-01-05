@@ -37,7 +37,7 @@
     </nav>
     <div class="dropItem">
         <div class="title">
-            <h1>🏹사냥 측정기</h1>
+            <h1>사냥 측정기</h1>
         </div>
       <div class="form">
           <select id="selectMonster">
@@ -365,12 +365,24 @@
         </div>
         </br>
         <div id="inchantTableWrapper">
-            <!-- 드롭 다운 실행 시 이미지 생성-->
+            <!-- 드롭 다운 실행 시 이미지,이름 생성-->
             <div id="inchantImageWrapper" style="">
+                <div id="강인한 흑요석-img-container">
                 <img id="강인한 흑요석-img" src="img/강인한 흑요석.png" alt="강인한 흑요석" width="100%">
+                <div class="image-alt-text"></div>
+                </div>
+                <div id="신속한 사금석-img-container">
                 <img id="신속한 사금석-img" src="img/신속한 사금석.png" alt="신속한 사금석" width="100%">
+                <div class="image-alt-text"></div>
+                </div>
+                <div id="끈기의 백수정-img-container">
                 <img id="끈기의 백수정-img" src="img/끈기의 백수정.png" alt="끈기의 백수정" width="100%">
+                <div class="image-alt-text"></div>
+                </div>
+                <div id="신비한 월장석-img-container">
                 <img id="신비한 월장석-img" src="img/신비한 월장석.png" alt="신비한 월장석" width="100%">
+                <div class="image-alt-text"></div>
+                </div>
             </div>
             <!-- 드롭 다운 실행 시 테이블 생성-->
             <div class="scollableTable">
@@ -385,67 +397,58 @@
                     <tr>
                         <td><img src="img/신속한 주술 비법.png"></td>
                         <td><input type="text"  class="price0" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan0" placeholder="전">  /
-                            <input type="text" class="endQuan0"placeholder="후"> </td>
+                        <td class="quantity0">1개</td>
                         <td class="itemResult0"></td>
                     </tr>
                     <tr>
                         <td><img src="img/강화된 사금석(+5).png"></td>
                         <td><input type="text"  class="price1" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan1" placeholder="전">  /
-                            <input type="text" class="endQuan1"placeholder="후"> </td>
+                        <td class="quantity1">1개</td>
                         <td class="itemResult1"></td>
                     </tr>
                     <tr>
                         <td><img src="img/수집된 영혼.png"></td>
                         <td><input type="text"  class="price2" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan2" placeholder="전">  /
-                            <input type="text" class="endQuan2"placeholder="후"> </td>
+                        <td class="quantity2">20개</td>
                         <td class="itemResult2"></td>
                     </tr>
                     <tr>
-                        <td><img src="img/해의 인장.png"></td>
+                        <td><img src="img/뇌의 인장.png"></td>
                         <td><input type="text"  class="price3" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan3" placeholder="전">  /
-                            <input type="text" class="endQuan3"placeholder="후"> </td>
+                        <td class="quantity3">10개</td>
                         <td class="itemResult3"></td>
                     </tr>
                     <tr>
-                        <td><img src="img/뇌의 인장.png"></td>
+                        <td><img src="img/해의 인장.png"></td>
                         <td><input type="text"  class="price4" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan4" placeholder="전">  /
-                            <input type="text" class="endQuan4"placeholder="후"> </td>
+                        <td class="quantity4">5개</td>
                         <td class="itemResult4"></td>
                     </tr>
                     <tr>
                         <td><img src="img/원기단.png"></td>
                         <td><input type="text"  class="price5" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan5" placeholder="전">  /
-                            <input type="text" class="endQuan5"placeholder="후"> </td>
+                        <td class="quantity5">1개</td>
                         <td class="itemResult5"></td>
                     </tr>
                     <tr>
                         <td><img src="img/형상 복원 가루.png"></td>
                         <td><input type="text"  class="price6" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan6" placeholder="전">  /
-                            <input type="text" class="endQuan6"placeholder="후"> </td>
+                        <td class="quantity6">1개</td>
                         <td class="itemResult6"></td>
                     </tr>
                     <tr>
                         <td><img src="img/용맹의 증표.png"></td>
                         <td><input type="text"  class="price7" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan7" placeholder="전">  /
-                            <input type="text" class="endQuan7"placeholder="후"> </td>
+                        <td class="quantity7">30개</td>
                         <td class="itemResult7"></td>
                     </tr>
                     <tr>
                         <td>수수료</td>
                         <td class="price8">1,000,000</td>
-                        <td class="quanInput"><input type="text" class="startQuan8" placeholder="전">  /
-                            <input type="text" class="endQuan8"placeholder="후"> </td>
+                        <td class="quantity8">1개</td>
                         <td class="itemResult8"></td>
                     </tr>
-                </table> <!-- 수집된 영혼 20개,해의 인장 5개, 뇌의 인장 10개,원기단 1개,용맹의 증표 30개, 형복가 1개-->
+                </table>
                 <table id="강인한 흑요석">
                     <tr>
                         <th>아이템</th>
@@ -456,67 +459,58 @@
                     <tr>
                         <td><img src="img/강인한 주술 비법.png"></td>
                         <td><input type="text"  class="price0" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan0" placeholder="전">  /
-                            <input type="text" class="endQuan0"placeholder="후"> </td>
+                        <td class="quantity0">1개</td>
                         <td class="itemResult0"></td>
                     </tr>
                     <tr>
                         <td><img src="img/강화된 흑요석(+5).png"></td>
                         <td><input type="text"  class="price1" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan1" placeholder="전">  /
-                            <input type="text" class="endQuan1"placeholder="후"> </td>
+                        <td class="quantity1">1개</td>
                         <td class="itemResult1"></td>
                     </tr>
                     <tr>
                         <td><img src="img/수집된 영혼.png"></td>
                         <td><input type="text"  class="price2" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan2" placeholder="전">  /
-                            <input type="text" class="endQuan2"placeholder="후"> </td>
+                        <td class="quantity2">20개</td>
                         <td class="itemResult2"></td>
                     </tr>
                     <tr>
                         <td><img src="img/불의 인장.png"></td>
                         <td><input type="text"  class="price3" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan3" placeholder="전">  /
-                            <input type="text" class="endQuan3"placeholder="후"> </td>
+                        <td class="quantity3">10개</td>
                         <td class="itemResult3"></td>
                     </tr>
                     <tr>
                         <td><img src="img/해의 인장.png"></td>
                         <td><input type="text"  class="price4" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan4" placeholder="전">  /
-                            <input type="text" class="endQuan4"placeholder="후"> </td>
+                        <td class="quantity4">5개</td>
                         <td class="itemResult4"></td>
                     </tr>
                     <tr>
                         <td><img src="img/원기단.png"></td>
                         <td><input type="text"  class="price5" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan5" placeholder="전">  /
-                            <input type="text" class="endQuan5"placeholder="후"> </td>
+                        <td class="quantity5">1개</td>
                         <td class="itemResult5"></td>
                     </tr>
                     <tr>
                         <td><img src="img/형상 복원 가루.png"></td>
                         <td><input type="text"  class="price6" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan6" placeholder="전">  /
-                            <input type="text" class="endQuan6"placeholder="후"> </td>
+                        <td class="quantity6">1개</td>
                         <td class="itemResult6"></td>
                     </tr>
                     <tr>
                         <td><img src="img/용맹의 증표.png"></td>
                         <td><input type="text"  class="price7" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan7" placeholder="전">  /
-                            <input type="text" class="endQuan7"placeholder="후"> </td>
+                        <td class="quantity7">30개</td>
                         <td class="itemResult7"></td>
                     </tr>
                     <tr>
                         <td>수수료</td>
                         <td class="price8">1,000,000</td>
-                        <td class="quanInput"><input type="text" class="startQuan8" placeholder="전">  /
-                            <input type="text" class="endQuan8"placeholder="후"> </td>
+                        <td class="quantity8">1개</td>
                         <td class="itemResult8"></td>
                     </tr>
-                </table><!-- 수집된 영혼 20개,해의 인장 5개, 불의 인장 10개,원기단 1개,용맹의 증표 30개, 형복가 1개-->
+                </table>
                 <table id="끈기의 백수정">
                     <tr>
                         <th>아이템</th>
@@ -527,67 +521,58 @@
                     <tr>
                         <td><img src="img/끈기의 주술 비법.png"></td>
                         <td><input type="text"  class="price0" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan0" placeholder="전">  /
-                            <input type="text" class="endQuan0"placeholder="후"> </td>
+                        <td class="quantity0">1개</td>
                         <td class="itemResult0"></td>
                     </tr>
                     <tr>
                         <td><img src="img/강화된 백수정(+5).png"></td>
                         <td><input type="text"  class="price1" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan1" placeholder="전">  /
-                            <input type="text" class="endQuan1"placeholder="후"> </td>
+                        <td class="quantity1">1개</td>
                         <td class="itemResult1"></td>
                     </tr>
                     <tr>
                         <td><img src="img/수집된 영혼.png"></td>
                         <td><input type="text"  class="price2" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan2" placeholder="전">  /
-                            <input type="text" class="endQuan2"placeholder="후"> </td>
+                        <td class="quantity2">20개</td>
                         <td class="itemResult2"></td>
                     </tr>
                     <tr>
                         <td><img src="img/바람의 인장.png"></td>
                         <td><input type="text"  class="price3" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan3" placeholder="전">  /
-                            <input type="text" class="endQuan3"placeholder="후"> </td>
+                        <td class="quantity3">10개</td>
                         <td class="itemResult3"></td>
                     </tr>
                     <tr>
                         <td><img src="img/달의 인장.png"></td>
                         <td><input type="text"  class="price4" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan4" placeholder="전">  /
-                            <input type="text" class="endQuan4"placeholder="후"> </td>
+                        <td class="quantity4">5개</td>
                         <td class="itemResult4"></td>
                     </tr>
                     <tr>
                         <td><img src="img/원기단.png"></td>
                         <td><input type="text"  class="price5" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan5" placeholder="전">  /
-                            <input type="text" class="endQuan5"placeholder="후"> </td>
+                        <td class="quantity5">1개</td>
                         <td class="itemResult5"></td>
                     </tr>
                     <tr>
                         <td><img src="img/형상 복원 가루.png"></td>
                         <td><input type="text"  class="price6" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan6" placeholder="전">  /
-                            <input type="text" class="endQuan6"placeholder="후"> </td>
+                        <td class="quantity6">1개</td>
                         <td class="itemResult6"></td>
                     </tr>
                     <tr>
                         <td><img src="img/용맹의 증표.png"></td>
                         <td><input type="text"  class="price7" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan7" placeholder="전">  /
-                            <input type="text" class="endQuan7"placeholder="후"> </td>
+                        <td class="quantity7">30개</td>
                         <td class="itemResult7"></td>
                     </tr>
                     <tr>
                         <td>수수료</td>
                         <td class="price8">1,000,000</td>
-                        <td class="quanInput"><input type="text" class="startQuan8" placeholder="전">  /
-                            <input type="text" class="endQuan8"placeholder="후"> </td>
+                        <td class="quantity8">1개</td>
                         <td class="itemResult8"></td>
                     </tr>
-                </table><!-- 수집된 영혼 20개,달의 인장 5개, 바람의 인장 10개,원기단 1개,용맹의 증표 30개, 형복가 1개-->
+                </table>
                 <table id="신비한 월장석">
                     <tr>
                         <th>아이템</th>
@@ -598,67 +583,58 @@
                     <tr>
                         <td><img src="img/신비한 주술 비법.png"></td>
                         <td><input type="text"  class="price0" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan0" placeholder="전">  /
-                            <input type="text" class="endQuan0"placeholder="후"> </td>
+                        <td class="quantity0">1개</td>
                         <td class="itemResult0"></td>
                     </tr>
                     <tr>
                         <td><img src="img/강화된 월장석(+5).png"></td>
                         <td><input type="text"  class="price1" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan1" placeholder="전">  /
-                            <input type="text" class="endQuan1"placeholder="후"> </td>
+                        <td class="quantity1">1개</td>
                         <td class="itemResult1"></td>
                     </tr>
                     <tr>
                         <td><img src="img/수집된 영혼.png"></td>
                         <td><input type="text"  class="price2" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan2" placeholder="전">  /
-                            <input type="text" class="endQuan2"placeholder="후"> </td>
+                        <td class="quantity2">20개</td>
                         <td class="itemResult2"></td>
                     </tr>
                     <tr>
                         <td><img src="img/물의 인장.png"></td>
                         <td><input type="text"  class="price3" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan3" placeholder="전">  /
-                            <input type="text" class="endQuan3"placeholder="후"> </td>
+                        <td class="quantity3">10개</td>
                         <td class="itemResult3"></td>
                     </tr>
                     <tr>
                         <td><img src="img/달의 인장.png"></td>
                         <td><input type="text"  class="price4" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan4" placeholder="전">  /
-                            <input type="text" class="endQuan4"placeholder="후"> </td>
+                        <td class="quantity4">5개</td>
                         <td class="itemResult4"></td>
                     </tr>
                     <tr>
                         <td><img src="img/원기단.png"></td>
                         <td><input type="text"  class="price5" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan5" placeholder="전">  /
-                            <input type="text" class="endQuan5"placeholder="후"> </td>
+                        <td class="quantity5">1개</td>
                         <td class="itemResult5"></td>
                     </tr>
                     <tr>
                         <td><img src="img/형상 복원 가루.png"></td>
                         <td><input type="text"  class="price6" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan6" placeholder="전">  /
-                            <input type="text" class="endQuan6"placeholder="후"> </td>
+                        <td class="quantity6">1개</td>
                         <td class="itemResult6"></td>
                     </tr>
                     <tr>
                         <td><img src="img/용맹의 증표.png"></td>
                         <td><input type="text"  class="price7" placeholder="가격"></td>
-                        <td class="quanInput"><input type="text" class="startQuan7" placeholder="전">  /
-                            <input type="text" class="endQuan7"placeholder="후"> </td>
+                        <td class="quantity7">30개</td>
                         <td class="itemResult7"></td>
                     </tr>
                     <tr>
                         <td>수수료</td>
                         <td class="price8">1,000,000</td>
-                        <td class="quanInput"><input type="text" class="startQuan8" placeholder="전">  /
-                            <input type="text" class="endQuan8"placeholder="후"> </td>
+                        <td class="quantity8">1개</td>
                         <td class="itemResult8"></td>
                     </tr>
-                </table><!-- 수집된 영혼 20개,달의 인장 5개, 물의 인장 10개,원기단 1개,용맹의 증표 30개, 형복가 1개-->
+                </table>
             </div>
         </div>
 <!--        <div class="exp">-->
@@ -677,17 +653,17 @@
 <!--                    <div class="whiteBorderBox">-->
 <!--                        <span id="resultExpPerHour">💡 시간 당 &nbsp; exp 획득 하였습니다.</span>-->
 <!--                        <span id="timeByGoldResult">💡 시간 당 &nbsp; 원 획득 하였습니다.</span>-->
-<!--                        <span id="totalGoldResult">💡 총 &nbsp; 원 획득 하였습니다.</span>-->
+<!--                        <span id="inchantTotalGoldResult">💡 총 &nbsp; 원 획득 하였습니다.</span>-->
 <!--                    </div>-->
 <!--                </div>-->
 <!--            </div>-->
-<!--            <button type="submit" id="inchantSubmitBtn">-->
-<!--                <span></span>-->
-<!--                <span></span>-->
-<!--                <span></span>-->
-<!--                <span></span>-->
-<!--                계산하기</button>-->
-<!--        </div>-->
+            <button type="submit" id="inchantSubmitBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                계산하기</button>
+        </div>
     </div>
 </section>
   <script src="js/app.js"></script>

@@ -759,10 +759,90 @@ table input {
   top: 0; /* 상단과의 거리 */
   height: 100%;
   z-index: 10; /* 다른 콘텐츠 위에 표시되도록 설정 */
+  display: flex;
+  align-items: center;
 }
 
 #inchantImageWrapper img{
-  height: 100%;
+  height: 40%;
+  width: 100px;
+}
+
+.image-alt-text {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12px;
+  color: #f2faff;
+  animation: glitch1 7s infinite;
+}
+
+#inchantImageWrapper:after {
+  content: "";
+  margin-top: 1.5px ;
+  position: absolute;
+  left: 34px;
+  top: 165px;
+  display: block;
+  text-align: center;
+  width: 30px;
+  border-bottom: white 1px solid;
+  opacity: 0.6;
+}
+/*Keyframes*/
+@keyframes glitch1 {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  7% {
+    transform: skew(-0.5deg, -0.9deg);
+    opacity: 0.75;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  27% {
+    transform: none;
+    opacity: 1;
+  }
+  30% {
+    transform: skew(0.8deg, -0.1deg);
+    opacity: 0.75;
+  }
+  35% {
+    transform: none;
+    opacity: 1;
+  }
+  52% {
+    transform: none;
+    opacity: 1;
+  }
+  55% {
+    transform: skew(-1deg, 0.2deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: none;
+    opacity: 1;
+  }
+  72% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: skew(0.4deg, 1deg);
+    opacity: 0.75;
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
 }
 
 #inchantImageWrapper {
@@ -770,6 +850,9 @@ table input {
   top: 0; /* 상단과의 거리 */
   height: 100%;
   z-index: 10; /* 다른 콘텐츠 위에 표시되도록 설정 */
+}
+#selectedImageName {
+  text-align: center;
 }
 
 #inchantTableWrapper {

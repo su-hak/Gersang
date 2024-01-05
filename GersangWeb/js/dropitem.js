@@ -120,16 +120,7 @@ function item(monsterId, priceClass, startQuanClass, endQuanClass, resultClass) 
 //   return result; // 계산된 결과 반환
 // }
 
-// input입력 시 숫자 천 단위로 ','표시
-$('input').on('input', function(e) {
-    // 숫자만 입력받도록 필터링
-    var nonDigit = /[^0-9]/g;
-    var value = e.target.value.replace(nonDigit, '');
 
-    // 천 단위로 콤마 추가
-    value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    e.target.value = value;
-});
 
 window.addEventListener("load", function () {
     let selectMonster = document.getElementById("selectMonster");
