@@ -83,10 +83,12 @@ function item(monsterId, priceClass, startQuanClass, endQuanClass, resultClass) 
     var startQuantity = document.querySelector(`#${monsterId} .${startQuanClass}`).value; // 수량 값 가져오기
     var endQuantity = document.querySelector(`#${monsterId} .${endQuanClass}`).value; // 수량 값 가져오기
 
-    var quantity = endQuantity - startQuantity;
+    // 콤마 제거 후 숫자로 변환, 없으면 0
+    startQuantity = startQuantity ? parseInt(startQuantity.replace(",", "")):0 ;
+    endQuantity = endQuantity ? parseInt(endQuantity.replace(",", "")):0 ;
 
     // 결과 계산 후 출력
-    var result = price * quantity;
+    var result = price * (endQuantity - startQuantity);
     document.querySelector(`#${monsterId} .${resultClass}`).innerText = "💰 : " + result.toLocaleString(); // 결과에 콤마 추가
 
     return result; // 계산된 결과 반환
