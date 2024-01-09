@@ -68,7 +68,12 @@ function calculateExpPerHour() {
 // 아이템 값 계산 목록
 function item(monsterId, priceClass, startQuanClass, endQuanClass, resultClass) {
     var priceElement = document.querySelector(`#${monsterId} .${priceClass}`);
-    var price;
+    //
+    // if (priceElement === null) {
+    //     console.error(`#${monsterId} .${priceClass} 요소를 찾을 수 없습니다.`);
+    //     return;
+    // }
+    // var price;
 
     // 가격 정보가 텍스트인 경우와 input 필드인 경우를 구분
     if (priceElement.tagName.toLowerCase() === 'input') {
@@ -165,12 +170,15 @@ window.addEventListener("load", function () {
 $('#submitBtn').click(function (){
     exp();
     time();
+
     var selectedMonster = document.getElementById('selectMonster').value;
     var totalGold = 0; // 총 수익 초기 값으로 변수 선언
 
-    for (var i = 0; i < 15; i++) {
+    var rows = document.querySelectorAll('#'+selectedMonster+' tr');
+
+    for (var i = 1; i < rows.length; i++) {
         // item('price' + i, 'startQuan' + i, 'endQuan' + i, 'itemResult' + i);
-        totalGold += item(selectedMonster,'price' + i, 'startQuan' + i, 'endQuan' + i, 'itemResult' + i);
+        totalGold += item(selectedMonster,'price' + (i-1), 'startQuan' + (i-1), 'endQuan' + (i-1), 'itemResult' + (i-1));
     }
     document.getElementById('totalGoldResult').innerText = "💡 총 " + totalGold.toLocaleString() + "원 획득"; // 결과에 콤마 추가
 
