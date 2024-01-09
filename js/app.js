@@ -29,3 +29,31 @@ $('input').on('input', function(e) {
   value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   e.target.value = value;
 });
+
+
+/*window.onload = function() {
+  var images = document.getElementsByTagName("img");
+  for (var i = 0; i < images.length; i++) {
+    images[i].addEventListener('mouseover', function() {
+      this.setAttribute('title', this.alt);
+    });
+    images[i].addEventListener('mouseout', function() {
+      this.removeAttribute('title');
+    });
+  }
+};*/
+
+// 이미지 오버 시 div생성 해서 설명 그 안에 띄우기
+window.onload = function() {
+  var images = document.querySelectorAll('.tooltip');
+  images.forEach(function(image) {
+    tippy(image, {
+      content: image.alt,
+      animation: 'scale-extreme',  // 애니메이션 효과 추가
+      arrow: false,  // 화살표 제거
+      theme: 'material',  // 테마 변경
+      duration: 0,
+      delay: [100, 150],
+    });
+  });
+};

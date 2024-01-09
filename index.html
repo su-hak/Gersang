@@ -3,22 +3,25 @@
       xmlns="http://www.w3.org/1999/html">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
 
-  <link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
 
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#fafafa">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
 </head>
 
 <body>
@@ -46,261 +49,772 @@
               <span></span>
               <span></span>
           <option value="default">몬스터를 고르세요.</option>
-          <option value="rudra">루드라의 혼(水)</option>
-          <option value="uglydreamghost">흉몽귀(水)</option>
+          <option value="루드라의 혼(水)">루드라의 혼(水)</option>
+          <option value="흉몽귀(水)">흉몽귀(水)</option>
+          <option value="지식의 고룡(水)">지식의 고룡(水)</option>
+          <option value="복수자_우태(火)">복수자_우태(火)</option>
+          <option value="태초의 도철(火)">태초의 도철(火)</option>
+          <option value="원한 신(火)">원한 신(火)</option>
         </select>
           <p>ver1.0</p>
       </div></br>
       <div id="tableWrapper">
         <!-- 드롭 다운 실행 시 이미지 생성-->
         <div id="imageWrapper" style="">
-          <img id="rudra-img" src="img/루드라.gif" alt="루드라" width="100%">
-          <img id="uglydreamghost-img" src="img/흉몽귀.gif" alt="흉몽귀" width="100%">
+          <img id="루드라의 혼(水)-img" src="img/루드라의 혼(水).gif" alt="루드라의 혼(水)" width="100%">
+          <img id="흉몽귀(水)-img" src="img/흉몽귀(水).gif" alt="흉몽귀(水)" width="100%">
+          <img id="지식의 고룡(水)-img" src="img/지식의 고룡(水).gif" alt="지식의 고룡(水)" width="100%">
+          <img id="복수자_우태(火)-img" src="img/복수자_우태(火).gif" alt="복수자_우태(火)" width="100%">
+          <img id="태초의 도철(火)-img" src="img/태초의 도철(火).gif" alt="태초의 도철(火)" width="100%">
+          <img id="원한 신(火)-img" src="img/원한 신(火).gif" alt="원한 신(火)" width="100%">
         </div>
         <!-- 드롭 다운 실행 시 테이블 생성-->
         <div class="scollableTable">
-        <table id="default"></table>
-        <table id="uglydreamghost">
-          <tr>
-            <th>아이템 이름</th>
-            <th>가격</th>
-            <th>수량</th>
-            <th>결과</th>
-          </tr>
-            <tr>
-                <td><img src="img/오래된 등껍질.png"></td>
-                <td class="price0">가격 : 476,665</td>
-                <td class="quanInput"><input type="text" class="startQuan0" placeholder="전"> /
-                    <input type="text" class="endQuan0"placeholder="후"></td>
-                <td class="itemResult0"></td>
-            </tr>
-            <tr>
-                <td><img src="img/천왕비를 본뜬 비파.png"></td>
-                <td class="price1">가격 : 476,665</td>
-                <td class="quanInput"><input type="text" class="startQuan1"placeholder="전">  /
-                    <input type="text" class="endQuan1"placeholder="후"> </td>
-                <td class="itemResult1"></td>
-            </tr>
-            <tr>
-                <td><img src="img/뜨거운 집게발.png"></td>
-                <td class="price2">가격 : 216,664</td>
-                <td class="quanInput"><input type="text" class="startQuan3" placeholder="전">  /
-                    <input type="text" class="endQuan3"placeholder="후"> </td>
-                <td class="itemResult3"></td>
-            </tr>
-            <tr>
-                <td><img src="img/악몽의 인장.png"></td>
-                <td class="price3">가격 : 130,000</td>
-                <td class="quanInput"><input type="text" class="startQuan2" placeholder="전">  /
-                    <input type="text" class="endQuan2"placeholder="후"> </td>
-                <td class="itemResult2"></td>
-            </tr>
-            <tr>
-            <td><img src="img/작은 물의 속성석.png"></td>
-            <td><input type="text"  class="price4" placeholder="가격"></td>
-            <td class="quanInput"><input type="text" class="startQuan4" placeholder="전">  /
-                    <input type="text" class="endQuan4"placeholder="후"> </td>
-                <td class="itemResult4"></td>
-            </tr>
-            <tr>
-                <td><img src="img/물의 정령석.png"></td>
-                <td><input type="text"  class="price5" placeholder="가격"></td>
-                <td class="quanInput"><input type="text" class="startQuan5" placeholder="전">  /
-                    <input type="text" class="endQuan5"placeholder="후"> </td>
-                <td class="itemResult5"></td>
-            </tr>
-            <tr>
-                <td><img src="img/작은 불의 속성석.png"></td>
-                <td><input type="text"  class="price6" placeholder="가격"></td>
-                <td class="quanInput"><input type="text" class="startQuan6" placeholder="전">  /
-                    <input type="text" class="endQuan6"placeholder="후"> </td>
-                <td class="itemResult6"></td>
-            </tr>
-            <tr>
-                <td><img src="img/정기의 구슬 조각(火).png"></td>
-                <td><input type="text"  class="price7" placeholder="가격"></td>
-                <td class="quanInput"><input type="text" class="startQuan7" placeholder="전">  /
-                    <input type="text" class="endQuan7"placeholder="후"> </td>
-                <td class="itemResult7"></td>
-            </tr>
-            <tr>
-                <td><img src="img/불의 인장.png"></td>
-                <td><input type="text"  class="price8" placeholder="가격"></td>
-                <td class="quanInput"><input type="text" class="startQuan8" placeholder="전">  /
-                    <input type="text" class="endQuan8"placeholder="후"> </td>
-                <td class="itemResult8"></td>
-            </tr>
-            <tr>
-                <td><img src="img/물의 인장.png"></td>
-                <td><input type="text"  class="price9" placeholder="가격"></td>
-                <td class="quanInput"><input type="text" class="startQuan9" placeholder="전">  /
-                    <input type="text" class="endQuan9"placeholder="후"> </td>
-                <td class="itemResult9"></td>
-            </tr>
-            <tr>
-                <td><img src="img/불의 결정체.png"></td>
-                <td class="price10">가격 : 390,000</td>
-                <td class="quanInput"><input type="text" class="startQuan10" placeholder="전">  /
-                    <input type="text" class="endQuan10"placeholder="후"> </td>
-                <td class="itemResult10"></td>
-            </tr>
-            <tr>
-                <td><img src="img/부서진 산호궁.png"></td>
-                <td ><input type="text"  class="price11" placeholder="가격"></td>
-                <td class="quanInput"><input type="text" class="startQuan11" placeholder="전">  /
-                    <input type="text" class="endQuan11"placeholder="후"> </td>
-                <td class="itemResult11"></td>
-            </tr>
-            <tr>
-                <td><img src="img/범자석판(베이).png"></td>
-                <td ><input type="text"  class="price12" placeholder="가격"></td>
-                <td class="quanInput"><input type="text" class="startQuan11" placeholder="전">  /
-                    <input type="text" class="endQuan11"placeholder="후"> </td>
-                <td class="itemResult11"></td>
-            </tr>
-            <tr>
-                <td><img src="img/악몽의 정수.png"></td>
-                <td ><input type="text"  class="price13" placeholder="가격"></td>
-                <td class="quanInput"><input type="text" class="startQuan12" placeholder="전">  /
-                    <input type="text" class="endQuan12"placeholder="후"> </td>
-                <td class="itemResult12"></td>
-            </tr>
-            <tr>
-                <td><img src="img/현무 가락지.png"></td>
-                <td><input type="text"  class="price14" placeholder="가격"></td>
-                <td class="quanInput"><input type="text" class="startQuan13" placeholder="전">  /
-                    <input type="text" class="endQuan13"placeholder="후"> </td>
-                <td class="itemResult13"></td>
-            </tr>
-            <tr>
-                <td><img src="img/다문천왕의 신발.png"></td>
-                <td><input type="text"  class="price15" placeholder="가격"></td>
-                <td class="quanInput"><input type="text" class="startQuan14" placeholder="전">  /
-                    <input type="text" class="endQuan14"placeholder="후"> </td>
-                <td class="itemResult14"></td>
-            </tr>
-            <tr>
-                <td><img src="img/황제의 요대.png"></td>
-                <td><input type="text"  class="price16" placeholder="가격"></td>
-                <td class="quanInput"><input type="text" class="startQuan14" placeholder="전">  /
-                    <input type="text" class="endQuan14"placeholder="후"> </td>
-                <td class="itemResult14"></td>
-            </tr>
-        </table>
-        <table id="rudra">
-            <tr>
-              <th>아이템 이름</th>
-              <th>가격</th>
-              <th>수량</th>
-              <th>결과</th>
-            </tr>
-            <tr>
-              <td><img src="img/건달바의%20부서진%20시타르.png"></span>
-              </td>
-              <td class="price0">가격 : 476,665</td>
-              <td class="quanInput"><input type="text" class="startQuan0"placeholder="전"> /
-                <input type="text" class="endQuan0"placeholder="후"></td>
-              <td class="itemResult0"></td>
-            </tr>
-            <tr>
-              <td><img src="img/부서진%20팔찌.png"></td>
-              <td class="price1">가격 : 390,000</td>
-              <td class="quanInput"><input type="text" class="startQuan1"placeholder="전">  /
-                <input type="text" class="endQuan1"placeholder="후"> </td>
-              <td class="itemResult1"></td>
-            </tr>
-            <tr>
-              <td><img src="img/마후라가의%20부서진%20목걸이.png"></td>
-              <td class="price2">가격 : 390,000</td>
-              <td class="quanInput"><input type="text" class="startQuan2" placeholder="전">  /
-                <input type="text" class="endQuan2"placeholder="후"> </td>
-              <td class="itemResult2"></td>
-            </tr>
-            <tr>
-              <td><img src="img/루드라의 끊어진 활.png"></td>
-              <td class="price3">가격 : 650,000</td>
-              <td class="quanInput"><input type="text" class="startQuan3" placeholder="전">  /
-                <input type="text" class="endQuan3"placeholder="후"> </td>
-              <td class="itemResult3"></td>
-            </tr>
-            <tr>
-              <td><img src="img/작은 물의 속성석.png"></td>
-              <td><input type="text"  class="price4" placeholder="가격"></td>
-              <td class="quanInput"><input type="text" class="startQuan4" placeholder="전">  /
-                <input type="text" class="endQuan4"placeholder="후"> </td>
-              <td class="itemResult4"></td>
-            </tr>
-            <tr>
-              <td><img src="img/물의 정령석.png"></td>
-              <td><input type="text"  class="price5" placeholder="가격"></td>
-              <td class="quanInput"><input type="text" class="startQuan5" placeholder="전">  /
-                <input type="text" class="endQuan5"placeholder="후"> </td>
-              <td class="itemResult5"></td>
-            </tr>
-            <tr>
-              <td><img src="img/작은 불의 속성석.png"></td>
-                <td><input type="text"  class="price6" placeholder="가격"></td>
-              <td class="quanInput"><input type="text" class="startQuan6" placeholder="전">  /
-                <input type="text" class="endQuan6"placeholder="후"> </td>
-              <td class="itemResult6"></td>
-            </tr>
-            <tr>
-              <td><img src="img/정기의 구슬 조각(火).png"></td>
-                <td><input type="text"  class="price7" placeholder="가격"></td>
-              <td class="quanInput"><input type="text" class="startQuan7" placeholder="전">  /
-                <input type="text" class="endQuan7"placeholder="후"> </td>
-              <td class="itemResult7"></td>
-            </tr>
-            <tr>
-              <td><img src="img/달의 인장.png"></td>
-                <td><input type="text"  class="price8" placeholder="가격"></td>
-              <td class="quanInput"><input type="text" class="startQuan8" placeholder="전">  /
-                <input type="text" class="endQuan8"placeholder="후"> </td>
-              <td class="itemResult8"></td>
-            </tr>
-            <tr>
-              <td><img src="img/물의 인장.png"></td>
-                <td><input type="text"  class="price9" placeholder="가격"></td>
-              <td class="quanInput"><input type="text" class="startQuan9" placeholder="전">  /
-                <input type="text" class="endQuan9"placeholder="후"> </td>
-              <td class="itemResult9"></td>
-            </tr>
-            <tr>
-              <td><img src="img/불의 인장.png"></td>
-                <td><input type="text"  class="price10" placeholder="가격"></td>
-              <td class="quanInput"><input type="text" class="startQuan10" placeholder="전">  /
-                <input type="text" class="endQuan10"placeholder="후"> </td>
-              <td class="itemResult10"></td>
-            </tr>
-            <tr>
-              <td><img src="img/불의 결정체.png"></td>
-              <td class="price11">가격 : 390,000</td>
-              <td class="quanInput"><input type="text" class="startQuan11" placeholder="전">  /
-                <input type="text" class="endQuan11"placeholder="후"> </td>
-              <td class="itemResult11"></td>
-            </tr>
-            <tr>
-              <td><img src="img/철질려.png"></td>
-              <td class="price12">가격 : 796,852</td>
-              <td class="quanInput"><input type="text" class="startQuan12" placeholder="전">  /
-                <input type="text" class="endQuan12"placeholder="후"> </td>
-              <td class="itemResult12"></td>
-            </tr>
-            <tr>
-              <td><img src="img/바투의 손목 보호대.png"></td>
-                <td><input type="text"  class="price13" placeholder="가격"></td>
-              <td class="quanInput"><input type="text" class="startQuan13" placeholder="전">  /
-                <input type="text" class="endQuan13"placeholder="후"> </td>
-              <td class="itemResult13"></td>
-            </tr>
-            <tr>
-              <td><img src="img/다문천왕의 요대.png"></td>
-                <td><input type="text"  class="price14" placeholder="가격"></td>
-              <td class="quanInput"><input type="text" class="startQuan14" placeholder="전">  /
-                <input type="text" class="endQuan14"placeholder="후"> </td>
-              <td class="itemResult14"></td>
-            </tr>
-          </table>
+            <table id="default"></table>
+            <table id="루드라의 혼(水)">
+                <tr>
+                    <th>아이템 이름</th>
+                    <th>가격</th>
+                    <th>수량</th>
+                    <th>결과</th>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/건달바의 부서진 시타르.png" alt="건달바의 부서진 시타르"></span></td>
+                    <td class="price0">가격 : 476,665</td>
+                    <td class="quanInput"><input type="text" class="startQuan0" placeholder="전"> /
+                        <input type="text" class="endQuan0" placeholder="후"></td>
+                    <td class="itemResult0"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/부서진 팔찌.png" alt="부서진 팔찌"></td>
+                    <td class="price1">가격 : 390,000</td>
+                    <td class="quanInput"><input type="text" class="startQuan1" placeholder="전"> /
+                        <input type="text" class="endQuan1" placeholder="후"></td>
+                    <td class="itemResult1"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/마후라가의 부서진 목걸이.png" alt="마후라가의 부서진 목걸이"></td>
+                    <td class="price2">가격 : 390,000</td>
+                    <td class="quanInput"><input type="text" class="startQuan2" placeholder="전"> /
+                        <input type="text" class="endQuan2" placeholder="후"></td>
+                    <td class="itemResult2"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/루드라의 끊어진 활.png" alt="루드라의 끊어진 활"></td>
+                    <td class="price3">가격 : 650,000</td>
+                    <td class="quanInput"><input type="text" class="startQuan3" placeholder="전"> /
+                        <input type="text" class="endQuan3" placeholder="후"></td>
+                    <td class="itemResult3"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/작은 물의 속성석.png" alt="작은 물의 속성석"></td>
+                    <td><input type="text" class="price4" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan4" placeholder="전"> /
+                        <input type="text" class="endQuan4" placeholder="후"></td>
+                    <td class="itemResult4"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/물의 정령석.png" alt="물의 정령석"></td>
+                    <td><input type="text" class="price5" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan5" placeholder="전"> /
+                        <input type="text" class="endQuan5" placeholder="후"></td>
+                    <td class="itemResult5"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/작은 불의 속성석.png" alt="작은 불의 속성석"></td>
+                    <td><input type="text" class="price6" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan6" placeholder="전"> /
+                        <input type="text" class="endQuan6" placeholder="후"></td>
+                    <td class="itemResult6"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/정기의 구슬 조각(火).png" alt="정기의 구슬 조각(火)"></td>
+                    <td><input type="text" class="price7" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan7" placeholder="전"> /
+                        <input type="text" class="endQuan7" placeholder="후"></td>
+                    <td class="itemResult7"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/달의 인장.png" alt="달의 인장"></td>
+                    <td><input type="text" class="price8" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan8" placeholder="전"> /
+                        <input type="text" class="endQuan8" placeholder="후"></td>
+                    <td class="itemResult8"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/물의 인장.png" alt="물의 인장"></td>
+                    <td><input type="text" class="price9" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan9" placeholder="전"> /
+                        <input type="text" class="endQuan9" placeholder="후"></td>
+                    <td class="itemResult9"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/불의 인장.png" alt="불의 인장"></td>
+                    <td><input type="text" class="price10" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan10" placeholder="전"> /
+                        <input type="text" class="endQuan10" placeholder="후"></td>
+                    <td class="itemResult10"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/불의 결정체.png" alt="불의 결정체"></td>
+                    <td class="price11">가격 : 390,000</td>
+                    <td class="quanInput"><input type="text" class="startQuan11" placeholder="전"> /
+                        <input type="text" class="endQuan11" placeholder="후"></td>
+                    <td class="itemResult11"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/철질려.png" alt="철질려"></td>
+                    <td class="price12">가격 : 796,852</td>
+                    <td class="quanInput"><input type="text" class="startQuan12" placeholder="전"> /
+                        <input type="text" class="endQuan12" placeholder="후"></td>
+                    <td class="itemResult12"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/바투의 손목 보호대.png" alt="투의 손목 보호대"></td>
+                    <td><input type="text" class="price13" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan13" placeholder="전"> /
+                        <input type="text" class="endQuan13" placeholder="후"></td>
+                    <td class="itemResult13"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/다문천왕의 요대.png" alt="다문천왕의 요대"></td>
+                    <td><input type="text" class="price14" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan14" placeholder="전"> /
+                        <input type="text" class="endQuan14" placeholder="후"></td>
+                    <td class="itemResult14"></td>
+                </tr>
+            </table>
+            <table id="흉몽귀(水)">
+                <tr>
+                    <th>아이템 이름</th>
+                    <th>가격</th>
+                    <th>수량</th>
+                    <th>결과</th>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/오래된 등껍질.png" alt="오래된 등껍질"></td>
+                    <td class="price0">가격 : 476,665</td>
+                    <td class="quanInput"><input type="text" class="startQuan0" placeholder="전"> /
+                        <input type="text" class="endQuan0" placeholder="후"></td>
+                    <td class="itemResult0"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/천왕비를 본뜬 비파.png" alt="천왕비를 본뜬 비파"></td>
+                    <td class="price1">가격 : 476,665</td>
+                    <td class="quanInput"><input type="text" class="startQuan1" placeholder="전"> /
+                        <input type="text" class="endQuan1" placeholder="후"></td>
+                    <td class="itemResult1"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/뜨거운 집게발.png" alt="뜨거운 집게발"></td>
+                    <td class="price2">가격 : 216,664</td>
+                    <td class="quanInput"><input type="text" class="startQuan3" placeholder="전"> /
+                        <input type="text" class="endQuan3" placeholder="후"></td>
+                    <td class="itemResult3"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/악몽의 인장.png" alt="악몽의 인장"></td>
+                    <td class="price3">가격 : 130,000</td>
+                    <td class="quanInput"><input type="text" class="startQuan2" placeholder="전"> /
+                        <input type="text" class="endQuan2" placeholder="후"></td>
+                    <td class="itemResult2"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/작은 물의 속성석.png" alt="작은 물의 속성석"></td>
+                    <td><input type="text" class="price4" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan4" placeholder="전"> /
+                        <input type="text" class="endQuan4" placeholder="후"></td>
+                    <td class="itemResult4"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/물의 정령석.png" alt="물의 정령석"></td>
+                    <td><input type="text" class="price5" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan5" placeholder="전"> /
+                        <input type="text" class="endQuan5" placeholder="후"></td>
+                    <td class="itemResult5"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/작은 불의 속성석.png" alt="작은 불의 속성석"></td>
+                    <td><input type="text" class="price6" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan6" placeholder="전"> /
+                        <input type="text" class="endQuan6" placeholder="후"></td>
+                    <td class="itemResult6"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/정기의 구슬 조각(火).png" alt="정기의 구슬 조각(火)"></td>
+                    <td><input type="text" class="price7" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan7" placeholder="전"> /
+                        <input type="text" class="endQuan7" placeholder="후"></td>
+                    <td class="itemResult7"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/불의 인장.png" alt="불의 인장"></td>
+                    <td><input type="text" class="price8" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan8" placeholder="전"> /
+                        <input type="text" class="endQuan8" placeholder="후"></td>
+                    <td class="itemResult8"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/물의 인장.png" alt="물의 인장"></td>
+                    <td><input type="text" class="price9" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan9" placeholder="전"> /
+                        <input type="text" class="endQuan9" placeholder="후"></td>
+                    <td class="itemResult9"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/불의 결정체.png" alt="불의 결정체"></td>
+                    <td class="price10">가격 : 390,000</td>
+                    <td class="quanInput"><input type="text" class="startQuan10" placeholder="전"> /
+                        <input type="text" class="endQuan10" placeholder="후"></td>
+                    <td class="itemResult10"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/부서진 산호궁.png" alt="부서진 산호궁"></td>
+                    <td><input type="text" class="price11" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan11" placeholder="전"> /
+                        <input type="text" class="endQuan11" placeholder="후"></td>
+                    <td class="itemResult11"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/범자석판(베이).png" alt="범자석판(베이)"></td>
+                    <td><input type="text" class="price12" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan11" placeholder="전"> /
+                        <input type="text" class="endQuan11" placeholder="후"></td>
+                    <td class="itemResult11"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/악몽의 정수.png" alt="악몽의 정수"></td>
+                    <td><input type="text" class="price13" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan12" placeholder="전"> /
+                        <input type="text" class="endQuan12" placeholder="후"></td>
+                    <td class="itemResult12"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/현무 가락지.png" alt="현무 가락지"></td>
+                    <td><input type="text" class="price14" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan13" placeholder="전"> /
+                        <input type="text" class="endQuan13" placeholder="후"></td>
+                    <td class="itemResult13"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/다문천왕의 신발.png" alt="다문천왕의 신발"></td>
+                    <td><input type="text" class="price15" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan14" placeholder="전"> /
+                        <input type="text" class="endQuan14" placeholder="후"></td>
+                    <td class="itemResult14"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/황제의 요대.png" alt="황제의 요대"></td>
+                    <td><input type="text" class="price16" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan14" placeholder="전"> /
+                        <input type="text" class="endQuan14" placeholder="후"></td>
+                    <td class="itemResult14"></td>
+                </tr>
+            </table>
+            <table id="지식의 고룡(水)">
+                <tr>
+                    <th>아이템 이름</th>
+                    <th>가격</th>
+                    <th>수량</th>
+                    <th>결과</th>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/가벼운 천 조각.png" alt="가벼운 천 조각"></span>
+                    </td>
+                    <td class="price0">가격 : 216,665</td>
+                    <td class="quanInput"><input type="text" class="startQuan0" placeholder="전"> /
+                        <input type="text" class="endQuan0" placeholder="후"></td>
+                    <td class="itemResult0"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/강철 갑피.png" alt="강철 갑피"></td>
+                    <td class="price1">가격 : 476,665</td>
+                    <td class="quanInput"><input type="text" class="startQuan1" placeholder="전"> /
+                        <input type="text" class="endQuan1" placeholder="후"></td>
+                    <td class="itemResult1"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/강철 날개.png" alt="강철 날개"></td>
+                    <td class="price2">가격 : 476,665</td>
+                    <td class="quanInput"><input type="text" class="startQuan2" placeholder="전"> /
+                        <input type="text" class="endQuan2" placeholder="후"></td>
+                    <td class="itemResult2"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/사역의 띠.png" alt="사역의 띠"></td>
+                    <td class="price3">가격 : 650,000</td>
+                    <td class="quanInput"><input type="text" class="startQuan3" placeholder="전"> /
+                        <input type="text" class="endQuan3" placeholder="후"></td>
+                    <td class="itemResult3"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/구구도.png" alt="구구도"></td>
+                    <td class="price4">가격 : 479,064</td>
+                    <td class="quanInput"><input type="text" class="startQuan4" placeholder="전"> /
+                        <input type="text" class="endQuan4" placeholder="후"></td>
+                    <td class="itemResult4"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/물의 결정체.png" alt="물의 결정체"></td>
+                    <td class="price5">가격 : 390,000</td>
+                    <td class="quanInput"><input type="text" class="startQuan5" placeholder="전"> /
+                        <input type="text" class="endQuan5" placeholder="후"></td>
+                    <td class="itemResult5"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/물의 정령석.png" alt="물의 정령석"></td>
+                    <td><input type="text" class="price6" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan6" placeholder="전"> /
+                        <input type="text" class="endQuan6" placeholder="후"></td>
+                    <td class="itemResult6"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/작은 물의 속성석.png" alt="작은 물의 속성석"></td>
+                    <td><input type="text" class="price7" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan7" placeholder="전"> /
+                        <input type="text" class="endQuan7" placeholder="후"></td>
+                    <td class="itemResult7"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/정기의 구슬 조각(水).png" alt="정기의 구슬 조각(水)"></td>
+                    <td><input type="text" class="price8" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan8" placeholder="전"> /
+                        <input type="text" class="endQuan8" placeholder="후"></td>
+                    <td class="itemResult8"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/악몽의 인장.png" alt="몽의 인장"></td>
+                    <td><input type="text" class="price9" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan9" placeholder="전"> /
+                        <input type="text" class="endQuan9" placeholder="후"></td>
+                    <td class="itemResult9"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/물의 인장.png" alt="물의 인장"></td>
+                    <td><input type="text" class="price10" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan10" placeholder="전"> /
+                        <input type="text" class="endQuan10" placeholder="후"></td>
+                    <td class="itemResult10"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/죽음의 비약.png" alt="죽음의 비약"></td>
+                    <td><input type="text" class="price11" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan11" placeholder="전"> /
+                        <input type="text" class="endQuan11" placeholder="후"></td>
+                    <td class="itemResult11"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/생명의 정수.png" alt="생명의 정수"></td>
+                    <td><input type="text" class="price12" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan12" placeholder="전"> /
+                        <input type="text" class="endQuan12" placeholder="후"></td>
+                    <td class="itemResult12"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/바다의 눈물.png" alt="바다의 눈물"></td>
+                    <td><input type="text" class="price13" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan13" placeholder="전"> /
+                        <input type="text" class="endQuan13" placeholder="후"></td>
+                    <td class="itemResult13"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/악몽의 정수.png" alt="악몽의 정수"></td>
+                    <td><input type="text" class="price14" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan14" placeholder="전"> /
+                        <input type="text" class="endQuan14" placeholder="후"></td>
+                    <td class="itemResult14"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/주작깃.png" alt="주작깃"></td>
+                    <td><input type="text" class="price15" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan15" placeholder="전"> /
+                        <input type="text" class="endQuan15" placeholder="후"></td>
+                    <td class="itemResult15"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/현무 가락지.png" alt="현무 가락지"></td>
+                    <td><input type="text" class="price16" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan16" placeholder="전"> /
+                        <input type="text" class="endQuan16" placeholder="후"></td>
+                    <td class="itemResult16"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/다문천왕의 요대.png" alt="다문천왕의 요대"></td>
+                    <td><input type="text" class="price17" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan17" placeholder="전"> /
+                        <input type="text" class="endQuan17" placeholder="후"></td>
+                    <td class="itemResult17"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/다문천왕의 손목 보호대.png" alt="다문천왕의 손목 보호대"></td>
+                    <td><input type="text" class="price18" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan18" placeholder="전"> /
+                        <input type="text" class="endQuan18" placeholder="후"></td>
+                    <td class="itemResult18"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/바투의 반지.png" alt="바투의 반지"></td>
+                    <td><input type="text" class="price19" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan19" placeholder="전"> /
+                        <input type="text" class="endQuan19" placeholder="후"></td>
+                    <td class="itemResult19"></td>
+                </tr>
+            </table>
+            <table id="복수자_우태(火)">
+                <tr>
+                    <th>아이템 이름</th>
+                    <th>가격</th>
+                    <th>수량</th>
+                    <th>결과</th>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/검은상단 천.png" alt="검은상단 천"></span>
+                    </td>
+                    <td class="price0">가격 : 216,665</td>
+                    <td class="quanInput"><input type="text" class="startQuan0" placeholder="전"> /
+                        <input type="text" class="endQuan0" placeholder="후"></td>
+                    <td class="itemResult0"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/부러진 저주의 횃불.png" alt="부러진 저주의 횃불"></td>
+                    <td class="price1">가격 : 476,665</td>
+                    <td class="quanInput"><input type="text" class="startQuan1" placeholder="전"> /
+                        <input type="text" class="endQuan1" placeholder="후"></td>
+                    <td class="itemResult1"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/사문의 가면.png" alt="사문의 가면"></td>
+                    <td class="price2">가격 : 476,665</td>
+                    <td class="quanInput"><input type="text" class="startQuan2" placeholder="전"> /
+                        <input type="text" class="endQuan2" placeholder="후"></td>
+                    <td class="itemResult2"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/초인의 검편.png" alt="초인의 검편"></td>
+                    <td class="price3">가격 : 650,000</td>
+                    <td class="quanInput"><input type="text" class="startQuan3" placeholder="전"> /
+                        <input type="text" class="endQuan3" placeholder="후"></td>
+                    <td class="itemResult3"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/불의 결정체.png" alt="불의 결정체"></td>
+                    <td class="price4">가격 : 390,000</td>
+                    <td class="quanInput"><input type="text" class="startQuan4" placeholder="전"> /
+                        <input type="text" class="endQuan4" placeholder="후"></td>
+                    <td class="itemResult4"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/구구도.png" alt="구구도"></td>
+                    <td class="price5">가격 : 379,063</td>
+                    <td class="quanInput"><input type="text" class="startQuan5" placeholder="전"> /
+                        <input type="text" class="endQuan5" placeholder="후"></td>
+                    <td class="itemResult5"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/작은 불의 속성석.png" alt="작은 불의 속성석"></td>
+                    <td><input type="text" class="price6" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan6" placeholder="전"> /
+                        <input type="text" class="endQuan6" placeholder="후"></td>
+                    <td class="itemResult6"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/정기의 구슬 조각(火).png" alt="정기의 구슬 조각(火)"></td>
+                    <td><input type="text" class="price7" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan7" placeholder="전"> /
+                        <input type="text" class="endQuan7" placeholder="후"></td>
+                    <td class="itemResult7"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/불의 정령석.png" alt="불의 정령석"></td>
+                    <td><input type="text" class="price8" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan8" placeholder="전"> /
+                        <input type="text" class="endQuan8" placeholder="후"></td>
+                    <td class="itemResult8"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/불의 인장.png" alt="불의 인장"></td>
+                    <td><input type="text" class="price9" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan9" placeholder="전"> /
+                        <input type="text" class="endQuan9" placeholder="후"></td>
+                    <td class="itemResult9"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/악몽의 인장.png" alt="악몽의 인장"></td>
+                    <td><input type="text" class="price10" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan10" placeholder="전"> /
+                        <input type="text" class="endQuan10" placeholder="후"></td>
+                    <td class="itemResult10"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/죽음의 비약.png" alt="죽음의 비약"></td>
+                    <td><input type="text" class="price11" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan11" placeholder="전"> /
+                        <input type="text" class="endQuan11" placeholder="후"></td>
+                    <td class="itemResult11"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/생명의 정수.png" alt="생명의 정수"></td>
+                    <td><input type="text" class="price12" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan12" placeholder="전"> /
+                        <input type="text" class="endQuan12" placeholder="후"></td>
+                    <td class="itemResult12"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/태양의 조각.png" alt="태양의 조각"></td>
+                    <td><input type="text" class="price13" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan13" placeholder="전"> /
+                        <input type="text" class="endQuan13" placeholder="후"></td>
+                    <td class="itemResult13"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/악몽의 정수.png" alt="악몽의 정수"></td>
+                    <td><input type="text" class="price14" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan14" placeholder="전"> /
+                        <input type="text" class="endQuan14" placeholder="후"></td>
+                    <td class="itemResult14"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/주작깃.png" alt="주작깃"></td>
+                    <td><input type="text" class="price15" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan15" placeholder="전"> /
+                        <input type="text" class="endQuan15" placeholder="후"></td>
+                    <td class="itemResult15"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/주작의 반지.png" alt="주작의 반지"></td>
+                    <td><input type="text" class="price16" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan16" placeholder="전"> /
+                        <input type="text" class="endQuan16" placeholder="후"></td>
+                    <td class="itemResult16"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/황제의 반지.png" alt="황제의 반지"></td>
+                    <td><input type="text" class="price17" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan17" placeholder="전"> /
+                        <input type="text" class="endQuan17" placeholder="후"></td>
+                    <td class="itemResult17"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/지국천왕의 요대.png" alt="지국천왕의 요대"></td>
+                    <td><input type="text" class="price18" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan18" placeholder="전"> /
+                        <input type="text" class="endQuan18" placeholder="후"></td>
+                    <td class="itemResult18"></td>
+                </tr>
+            </table>
+            <table id="태초의 도철(火)">
+                <tr>
+                    <th>아이템 이름</th>
+                    <th>가격</th>
+                    <th>수량</th>
+                    <th>결과</th>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/거월부.png" alt="거월부"></span>
+                    </td>
+                    <td class="price0">가격 : 417,917</td>
+                    <td class="quanInput"><input type="text" class="startQuan0" placeholder="전"> /
+                        <input type="text" class="endQuan0" placeholder="후"></td>
+                    <td class="itemResult0"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/구구도.png" alt="구구도"></td>
+                    <td class="price1">가격 : 379,063</td>
+                    <td class="quanInput"><input type="text" class="startQuan1" placeholder="전"> /
+                        <input type="text" class="endQuan1" placeholder="후"></td>
+                    <td class="itemResult1"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/철질려.png" alt="철질려"></td>
+                    <td class="price2">가격 : 796,852</td>
+                    <td class="quanInput"><input type="text" class="startQuan2" placeholder="전"> /
+                        <input type="text" class="endQuan2" placeholder="후"></td>
+                    <td class="itemResult2"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/일월권.png" alt="일월권"></td>
+                    <td class="price3">가격 : 86,676</td>
+                    <td class="quanInput"><input type="text" class="startQuan3" placeholder="전"> /
+                        <input type="text" class="endQuan3" placeholder="후"></td>
+                    <td class="itemResult3"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/악몽의 인장.png" alt="악몽의 인장"></td>
+                    <td><input type="text" class="price4" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan4" placeholder="전"> /
+                        <input type="text" class="endQuan4" placeholder="후"></td>
+                    <td class="itemResult4"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/천왕검을 본뜬 편검.png" alt="천왕검을 본뜬 편검"></td>
+                    <td><input type="text" class="price5" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan5" placeholder="전"> /
+                        <input type="text" class="endQuan5" placeholder="후"></td>
+                    <td class="itemResult5"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/작은 불의 속성석.png" alt="작은 불의 속성석"></td>
+                    <td><input type="text" class="price6" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan6" placeholder="전"> /
+                        <input type="text" class="endQuan6" placeholder="후"></td>
+                    <td class="itemResult6"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/불의 정령석.png" alt="불의 정령석"></td>
+                    <td><input type="text" class="price7" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan7" placeholder="전"> /
+                        <input type="text" class="endQuan7" placeholder="후"></td>
+                    <td class="itemResult7"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/불의 인장.png" alt="불의 인장"></td>
+                    <td><input type="text" class="price8" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan8" placeholder="전"> /
+                        <input type="text" class="endQuan8" placeholder="후"></td>
+                    <td class="itemResult8"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/범자석판(캉).png" alt="범자석판(캉)"></td>
+                    <td><input type="text" class="price9" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan9" placeholder="전"> /
+                        <input type="text" class="endQuan9" placeholder="후"></td>
+                    <td class="itemResult9"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/영겁을 견딘 가죽.png" alt="영겁을 견딘 가죽"></td>
+                    <td><input type="text" class="price10" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan10" placeholder="전"> /
+                        <input type="text" class="endQuan10" placeholder="후"></td>
+                    <td class="itemResult10"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/영겁의 갈기털.png" alt="영겁의 갈기털"></td>
+                    <td><input type="text" class="price11" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan11" placeholder="전"> /
+                        <input type="text" class="endQuan11" placeholder="후"></td>
+                    <td class="itemResult11"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/영겁의 뿔.png" alt="영겁의 뿔"></td>
+                    <td><input type="text" class="price12" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan12" placeholder="전"> /
+                        <input type="text" class="endQuan12" placeholder="후"></td>
+                    <td class="itemResult12"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/주술된 족쇠 파편.png" alt="주술된 족쇠 파편"></td>
+                    <td><input type="text" class="price13" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan13" placeholder="전"> /
+                        <input type="text" class="endQuan13" placeholder="후"></td>
+                    <td class="itemResult13"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/주작깃.png" alt="주작깃"></td>
+                    <td><input type="text" class="price14" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan14" placeholder="전"> /
+                        <input type="text" class="endQuan14" placeholder="후"></td>
+                    <td class="itemResult14"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/주작의 반지.png" alt="주작의 반지"></td>
+                    <td><input type="text" class="price15" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan15" placeholder="전"> /
+                        <input type="text" class="endQuan15" placeholder="후"></td>
+                    <td class="itemResult15"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/<강인한>흑요석.png" alt="<강인한>흑요석"></td>
+                    <td><input type="text" class="price16" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan16" placeholder="전"> /
+                        <input type="text" class="endQuan16" placeholder="후"></td>
+                    <td class="itemResult16"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/지국천왕의 반지 제조서.png" alt="지국천왕의 반지 제조서"></td>
+                    <td><input type="text" class="price17" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan17" placeholder="전"> /
+                        <input type="text" class="endQuan17" placeholder="후"></td>
+                    <td class="itemResult17"></td>
+                </tr>
+            </table>
+            <table id="원한 신(火)">
+                <tr>
+                    <th>아이템 이름</th>
+                    <th>가격</th>
+                    <th>수량</th>
+                    <th>결과</th>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/원한이 깃든 지팡이.png" alt="원한이 깃든 지팡이"></span></td>
+                    <td class="price0">가격 : 130,000</td>
+                    <td class="quanInput"><input type="text" class="startQuan0" placeholder="전"> /
+                        <input type="text" class="endQuan0" placeholder="후"></td>
+                    <td class="itemResult0"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/원한이 깃든 부러진 단검.png" alt="원한이 깃든 부러진 단검"></td>
+                    <td class="price1">가격 :130,000</td>
+                    <td class="quanInput"><input type="text" class="startQuan1" placeholder="전"> /
+                        <input type="text" class="endQuan1" placeholder="후"></td>
+                    <td class="itemResult1"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/원한신의 부러진 화검.png" alt="원한신의 부러진 화검"></td>
+                    <td class="price2">가격 : 216,666</td>
+                    <td class="quanInput"><input type="text" class="startQuan2" placeholder="전"> /
+                        <input type="text" class="endQuan2" placeholder="후"></td>
+                    <td class="itemResult2"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/귀면도.png" alt="귀면도"></td>
+                    <td class="price3">가격 : 1,524,924</td>
+                    <td class="quanInput"><input type="text" class="startQuan3" placeholder="전"> /
+                        <input type="text" class="endQuan3" placeholder="후"></td>
+                    <td class="itemResult3"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/공작선.png" alt="공작선"></td>
+                    <td class="price4">가격 : 1,232,469</td>
+                    <td class="quanInput"><input type="text" class="startQuan4" placeholder="전"> /
+                        <input type="text" class="endQuan4" placeholder="후"></td>
+                    <td class="itemResult4"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/별운검.png" alt="별운검"></td>
+                    <td class="price5">가격 : 996,066</td>
+                    <td class="quanInput"><input type="text" class="startQuan5" placeholder="전"> /
+                        <input type="text" class="endQuan5" placeholder="후"></td>
+                    <td class="itemResult5"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/[광개토]주술 비법.png" alt="[광개토]주술 비법"></td>
+                    <td><input type="text" class="price6" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan6" placeholder="전"> /
+                        <input type="text" class="endQuan6" placeholder="후"></td>
+                    <td class="itemResult6"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/[강인한]주술 비법.png" alt="[강인한]주술 비법"></td>
+                    <td><input type="text" class="price7" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan7" placeholder="전"> /
+                        <input type="text" class="endQuan7" placeholder="후"></td>
+                    <td class="itemResult7"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/원기단.png" alt="원기단"></td>
+                    <td><input type="text" class="price8" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan8" placeholder="전"> /
+                        <input type="text" class="endQuan8" placeholder="후"></td>
+                    <td class="itemResult8"></td>
+                </tr>
+                <tr>
+                    <td><img class="tooltip" src="img/지국천왕의 관.png" alt="지국천왕의 관"></td>
+                    <td><input type="text" class="price9" placeholder="가격"></td>
+                    <td class="quanInput"><input type="text" class="startQuan9" placeholder="전"> /
+                        <input type="text" class="endQuan9" placeholder="후"></td>
+                    <td class="itemResult9"></td>
+                </tr>
+            </table>
         </div>
         </div>
       <div class="exp">
