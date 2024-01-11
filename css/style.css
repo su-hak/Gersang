@@ -299,8 +299,8 @@ table input {
 }
 
 .scollableTable img {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
 }
 
 .scollableTable {
@@ -311,6 +311,10 @@ table input {
 
 .scollableTable th {
   width: 100px;
+}
+
+.scollableTable td:nth-child(1) {
+  width: 10%;
 }
 
 .scollableTable::-webkit-scrollbar {
@@ -534,7 +538,7 @@ table input {
   animation: glitch1 7s infinite;
 }
 
-#inchantImageWrapper:after {
+.imageBorder {
   content: "";
   margin-top: 1.5px ;
   position: absolute;
@@ -546,7 +550,8 @@ table input {
   border-bottom: white 1px solid;
   opacity: 0.6;
 }
-/*Keyframes*/
+
+/*  Keyframes  */
 @keyframes glitch1 {
   0% {
     transform: none;

@@ -81,7 +81,7 @@ function item(monsterId, priceClass, startQuanClass, endQuanClass, resultClass) 
         price = priceElement.value ? parseInt(priceElement.value.replace(/,/g, ''), 10) : 0;
     } else {
         var priceText = priceElement.innerText;
-        price = priceText.replace("가격 : ", "").replace(",", ""); // 가격에서 문자 제거
+        price = priceText.replace("💰 : ", "").replace(",", ""); // 가격에서 문자 제거
         price = price ? parseInt(price, 10): 0; // 숫자로 변환
     }
 

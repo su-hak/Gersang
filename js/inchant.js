@@ -6,6 +6,9 @@ window.addEventListener("load", function () {
     let images2 = sec2.querySelectorAll("#inchantImageWrapper img");
     let inchantDiv = document.querySelector("#inchantBox");
 
+
+
+
     function hideAllInchant(elements) {
         elements.forEach(el => {
             el.style.display = "none"
@@ -29,10 +32,13 @@ window.addEventListener("load", function () {
 
             // 이미지 아래 이름
             let altTextElement = document.createElement("div");
+            let altBorderElement = document.createElement("div");
+            altBorderElement.className = "imageBorder";
             altTextElement.className = "image-alt-text";
             altTextElement.textContent = altValue;
 
             // 이미지 요소의 부모 요소에 새로운 요소 추가
+            element.parentNode.appendChild(altBorderElement);
             element.parentNode.appendChild(altTextElement);
         }
     }
@@ -50,6 +56,7 @@ window.addEventListener("load", function () {
         } else {
             inchantDiv.style.display = "none";
         }
+
         showElementChant(selectInchant.value);
         showElementChant(selectInchant.value + "-img");
     });
@@ -57,6 +64,7 @@ window.addEventListener("load", function () {
     selectInchant.value = "inchantDefault";
     showElementChant("inchantDefault");
 });
+
 
 // 계산 함수
 function inchantItem(inchantPriceClass, inchantQuanClass, inchantResultClass) {
