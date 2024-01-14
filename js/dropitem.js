@@ -68,12 +68,7 @@ function calculateExpPerHour() {
 // 아이템 값 계산 목록
 function item(monsterId, priceClass, startQuanClass, endQuanClass, resultClass) {
     var priceElement = document.querySelector(`#${monsterId} .${priceClass}`);
-    //
-    // if (priceElement === null) {
-    //     console.error(`#${monsterId} .${priceClass} 요소를 찾을 수 없습니다.`);
-    //     return;
-    // }
-    // var price;
+
 
     // 가격 정보가 텍스트인 경우와 input 필드인 경우를 구분
     if (priceElement.tagName.toLowerCase() === 'input') {
@@ -89,8 +84,10 @@ function item(monsterId, priceClass, startQuanClass, endQuanClass, resultClass) 
     var endQuantity = document.querySelector(`#${monsterId} .${endQuanClass}`).value; // 수량 값 가져오기
 
     // 콤마 제거 후 숫자로 변환, 없으면 0
-    startQuantity = startQuantity ? parseInt(startQuantity.replace(",", "")):0 ;
-    endQuantity = endQuantity ? parseInt(endQuantity.replace(",", "")):0 ;
+    startQuantity = startQuantity ? parseInt(startQuantity.replace(/,/g, "")):0 ;
+    endQuantity = endQuantity ? parseInt(endQuantity.replace(/,/g, "")):0 ;
+
+
 
     // 결과 계산 후 출력
     var result = price * (endQuantity - startQuantity);
