@@ -70,37 +70,45 @@ window.addEventListener("load", function () {
 
 
 // 계산 함수
-function enchantItem(enchantPriceClass, enchantQuanClass, enchantResultClass) {
-    let total = 0;
-    $("." + enchantPriceClass).each(function (index) {
-// let price = $(this).val() ? parseInt($(this).val().replace(/,/g, ''), 10) : 0;
-        let price = 0;
-        if ($(this).is('input')) {
-            price = $(this).val() ? parseInt($(this).val().replace(/,/g, ''), 10) : 0;
-        } else {
-            price = $(this).text() ? parseInt($(this).text().replace("💰 : ", "").replace(/,/g, ''), 10) : 0;
-        }
-        let quantity = $("." + enchantQuanClass).eq(index).text();
-        quantity = quantity.replace('개', ''); // 수량에서 '개'를 제거
-        let result = price * quantity;
+function enchantItem(enchantId, priceClass, quanClass, resultClass) {
+    console.log('enchantId in enchantItem:', enchantId); // enchantId 값 출력
 
-        if (!isNaN(result)) { // 결과가 숫자인 경우에만 출력
-            $("." + enchantResultClass).eq(index).text("💰 :" + result.toLocaleString());
-            total += result;
-        }
-    });
-    return total;
+    var priceElement = document.querySelector(`#${enchantId} .${priceClass}`);
+
+    var price = 0;
+    if (priceElement.tagName.toLowerCase() === 'input') {
+        price = priceElement.value ? parseInt(priceElement.value.replace(/,/g, ''), 10) : 0;
+    } else {
+        var priceText = priceElement.innerText;
+        price = priceText.replace("💰 : ", "").replace(/,/g, "");
+        price = price ? parseInt(price, 10): 0;
+    }
+
+    var quantity = document.querySelector(`#${enchantId} .${quanClass}`).innerText;
+    quantity = quantity.replace('개', '');
+    quantity = quantity ? parseInt(quantity, 10): 0;
+
+    var result = price * quantity;
+    document.querySelector(`#${enchantId} .${resultClass}`).innerText = "💰 :" + result.toLocaleString();
+
+    return result;
 }
 
-$('#enchantSubmitBtn').click(function () {
-    var enchantTotalGold = 0;
-    /*    var selectedEnchant = document.getElementById('selectEnchant').value;*/
+$(document).ready()
+{
+    $('#enchantSubmitBtn').click(function () {
+        var selectedEnchant = document.getElementById('selectEnchant').value;
+        console.log('selectedEnchant in click event:', selectedEnchant);
 
-    /*var enchantRows = document.querySelectorAll('#' + selectedEnchant + ' tr');*/
+        var enchantRows = document.querySelectorAll('#' + selectedEnchant + ' tr');
+        console.log('enchantRows length:', enchantRows.length); // 행의 개수 출력
+        console.log('enchantRows:', enchantRows); // 행의 배열 출력
 
-    for (var i = 0; i < 10; i++) {
-        enchantTotalGold += enchantItem('enchantPrice' + (i-1), 'enchantQuan' + (i-1), 'enchantResult' + (i-1));
-    }
-    document.getElementById('enchantTotalGoldResult').innerText = "💡 주술 비용으로 총 " + enchantTotalGold.toLocaleString() + "원 발생 하였습니다.";
-
-});
+        var enchantTotalGold = 0;
+        for (var i = 1; i < enchantRows.length; i++) {
+            console.log('Loop iteration:', i);
+            enchantTotalGold += enchantItem(selectedEnchant, 'enchantPrice' + (i - 1), 'enchantQuan' + (i - 1), 'enchantResult' + (i - 1));
+        }
+        document.getElementById('enchantTotalGoldResult').innerText = "💡 주술 비용으로 총 " + enchantTotalGold.toLocaleString() + "원 발생 하였습니다.";
+    });
+}
