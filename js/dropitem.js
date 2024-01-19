@@ -96,36 +96,6 @@ function item(monsterId, priceClass, startQuanClass, endQuanClass, resultClass) 
     return result; // 계산된 결과 반환
 }
 
-
-// function item(priceClass, startQuanClass, endQuanClass, resultClass) {
-//
-//   var priceElement = document.getElementsByClassName(priceClass);
-//   var price;
-//
-//   // 가격 정보가 텍스트인 경우와 input 필드인 경우를 구분
-//   if (priceElement.tagName.toLowerCase() === 'input') {
-//     // 콤마 제거 후 숫자로 변환, 없으면 0
-//     price = priceElement.value ? parseInt(priceElement.value.replace(/,/g, ''), 10) : 0;
-//   } else {
-//     price = priceElement.innerText;
-//     price = price.replace("가격 : ", "").replace(",", ""); // 가격에서 문자 제거
-//     price = price ? parseInt(price, 10): 0; // 숫자로 변환
-//   }
-//
-//   var startQuantity = document.getElementsByClassName(startQuanClass).value; // 수량 값 가져오기
-//   var endQuantity = document.getElementsByClassName(endQuanClass).value; // 수량 값 가져오기
-//
-//   var quantity = endQuantity - startQuantity;
-//
-//   // 결과 계산 후 출력
-//   var result = price * quantity;
-//   document.getElementsByClassName(resultClass).innerText = "💰 : " + result.toLocaleString(); // 결과에 콤마 추가
-//
-//   return result; // 계산된 결과 반환
-// }
-
-
-
 window.addEventListener("load", function () {
     let selectMonster = document.getElementById("selectMonster");
     let sec1 = document.getElementById("sec1");

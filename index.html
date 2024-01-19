@@ -62,7 +62,7 @@
             </select>
             <p>ver1.0</p>
         </div>
-        </br>
+        <br>
         <div id="tableWrapper">
             <!-- 드롭 다운 실행 시 이미지 생성-->
             <div id="imageWrapper" style="">
@@ -1187,28 +1187,30 @@
             <li><a href="#sec4">준비 중</a></li>
         </ul>
     </nav>
-    <div class="inchantItem">
+    <div class="enchantItem">
         <div class="title">
             <h1>주술 계산기</h1>
         </div>
         <div class="form">
-            <select id="selectInchant">
+            <select id="selectEnchant">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <option value="inchantDefault">주술을 고르세요.</option>
+                <option value="enchantDefault">주술을 고르세요.</option>
                 <option value="강인한 흑요석">강인한 흑요석</option>
                 <option value="신속한 사금석">신속한 사금석</option>
                 <option value="끈기의 백수정">끈기의 백수정</option>
                 <option value="신비한 월장석">신비한 월장석</option>
+                <option value="명왕갑">명왕갑</option>
+                <option value="고급 명왕갑">고급 명왕갑</option>
             </select>
             <p>ver1.0</p>
         </div>
-        </br>
-        <div id="inchantTableWrapper">
+        <br>
+        <div id="enchantTableWrapper">
             <!-- 드롭 다운 실행 시 이미지,이름 생성-->
-            <div id="inchantImageWrapper" style="">
+            <div id="enchantImageWrapper" style="">
                 <div id="강인한 흑요석-img-container">
                     <img id="강인한 흑요석-img" src="img/강인한 흑요석.png" alt="강인한 흑요석" width="100%">
                 </div>
@@ -1221,10 +1223,16 @@
                 <div id="신비한 월장석-img-container">
                     <img id="신비한 월장석-img" src="img/신비한 월장석.png" alt="신비한 월장석" width="100%">
                 </div>
+                <div id="명왕갑-img-container">
+                    <img id="명왕갑-img" src="img/명왕갑.png" alt="명왕갑" width="100%">
+                </div>
+                <div id="고급 명왕갑-img-container">
+                    <img id="고급 명왕갑-img" src="img/고급 명왕갑.png" alt="고급 명왕갑" width="100%">
+                </div>
             </div>
             <!-- 드롭 다운 실행 시 테이블 생성-->
             <div class="scollableTable">
-                <table id="inchantDefault"></table>
+                <table id="enchantDefault"></table>
                 <table id="강인한 흑요석">
                     <tr>
                         <th>아이템</th>
@@ -1234,57 +1242,57 @@
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/강인한 주술 비법.png" alt="강인한 주술 비법"></td>
-                        <td><input type="text" class="inchantPrice0" placeholder="가격"></td>
-                        <td class="inchantQuan0">1개</td>
-                        <td class="inchantResult0"></td>
+                        <td><input type="text" class="enchantPrice0" placeholder="가격"></td>
+                        <td class="enchantQuan0">1개</td>
+                        <td class="enchantResult0"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/강화된 흑요석(+5).png" alt="강화된 흑요석(+5)"></td>
-                        <td><input type="text" class="inchantPrice1" placeholder="가격"></td>
-                        <td class="inchantQuan1">1개</td>
-                        <td class="inchantResult1"></td>
+                        <td><input type="text" class="enchantPrice1" placeholder="가격"></td>
+                        <td class="enchantQuan1">1개</td>
+                        <td class="enchantResult1"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/수집된 영혼.png" alt="수집된 영혼"></td>
-                        <td><input type="text" class="inchantPrice2" placeholder="가격"></td>
-                        <td class="inchantQuan2">20개</td>
-                        <td class="inchantResult2"></td>
+                        <td><input type="text" class="enchantPrice2" placeholder="가격"></td>
+                        <td class="enchantQuan2">20개</td>
+                        <td class="enchantResult2"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/불의 인장.png" alt="불의 인장"></td>
-                        <td><input type="text" class="inchantPrice3" placeholder="가격"></td>
-                        <td class="inchantQuan3">10개</td>
-                        <td class="inchantResult3"></td>
+                        <td><input type="text" class="enchantPrice3" placeholder="가격"></td>
+                        <td class="enchantQuan3">10개</td>
+                        <td class="enchantResult3"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/해의 인장.png" alt="해의 인장"></td>
-                        <td><input type="text" class="inchantPrice4" placeholder="가격"></td>
-                        <td class="inchantQuan4">5개</td>
-                        <td class="inchantResult4"></td>
+                        <td><input type="text" class="enchantPrice4" placeholder="가격"></td>
+                        <td class="enchantQuan4">5개</td>
+                        <td class="enchantResult4"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/원기단.png" alt="원기단"></td>
-                        <td><input type="text" class="inchantPrice5" placeholder="가격"></td>
-                        <td class="inchantQuan5">1개</td>
-                        <td class="inchantResult5"></td>
+                        <td><input type="text" class="enchantPrice5" placeholder="가격"></td>
+                        <td class="enchantQuan5">1개</td>
+                        <td class="enchantResult5"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/형상 복원 가루.png" alt="형상 복원 가루"></td>
-                        <td><input type="text" class="inchantPrice6" placeholder="가격"></td>
-                        <td class="inchantQuan6">1개</td>
-                        <td class="inchantResult6"></td>
+                        <td><input type="text" class="enchantPrice6" placeholder="가격"></td>
+                        <td class="enchantQuan6">1개</td>
+                        <td class="enchantResult6"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/용맹의 증표.png" alt="용맹의 증표"></td>
-                        <td><input type="text" class="inchantPrice7" placeholder="가격"></td>
-                        <td class="inchantQuan7">30개</td>
-                        <td class="inchantResult7"></td>
+                        <td><input type="text" class="enchantPrice7" placeholder="가격"></td>
+                        <td class="enchantQuan7">30개</td>
+                        <td class="enchantResult7"></td>
                     </tr>
                     <tr>
                         <td>수수료</td>
-                        <td class="inchantPrice8">1,000,000</td>
-                        <td class="inchantQuan8">1개</td>
-                        <td class="inchantResult8"></td>
+                        <td class="enchantPrice8">💰 : 1,000,000</td>
+                        <td class="enchantQuan8">1개</td>
+                        <td class="enchantResult8"></td>
                     </tr>
                 </table>
                 <table id="신속한 사금석">
@@ -1296,57 +1304,57 @@
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/신속한 주술 비법.png" alt="신속한 주술 비법"></td>
-                        <td><input type="text" class="inchantPrice0" placeholder="가격"></td>
-                        <td class="inchantQuan0">1개</td>
-                        <td class="inchantResult0"></td>
+                        <td><input type="text" class="enchantPrice0" placeholder="가격"></td>
+                        <td class="enchantQuan0">1개</td>
+                        <td class="enchantResult0"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/강화된 사금석(+5).png" alt="강화된 사금석(+5)"></td>
-                        <td><input type="text" class="inchantPrice1" placeholder="가격"></td>
-                        <td class="inchantQuan1">1개</td>
-                        <td class="inchantResult1"></td>
+                        <td><input type="text" class="enchantPrice1" placeholder="가격"></td>
+                        <td class="enchantQuan1">1개</td>
+                        <td class="enchantResult1"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/수집된 영혼.png" alt="수집된 영혼"></td>
-                        <td><input type="text" class="inchantPrice2" placeholder="가격"></td>
-                        <td class="inchantQuan2">20개</td>
-                        <td class="inchantResult2"></td>
+                        <td><input type="text" class="enchantPrice2" placeholder="가격"></td>
+                        <td class="enchantQuan2">20개</td>
+                        <td class="enchantResult2"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/뇌의 인장.png" alt="뇌의 인장"></td>
-                        <td><input type="text" class="inchantPrice3" placeholder="가격"></td>
-                        <td class="inchantQuan3">10개</td>
-                        <td class="inchantResult3"></td>
+                        <td><input type="text" class="enchantPrice3" placeholder="가격"></td>
+                        <td class="enchantQuan3">10개</td>
+                        <td class="enchantResult3"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/해의 인장.png" alt="해의 인장"></td>
-                        <td><input type="text" class="inchantPrice4" placeholder="가격"></td>
-                        <td class="inchantQuan4">5개</td>
-                        <td class="inchantResult4"></td>
+                        <td><input type="text" class="enchantPrice4" placeholder="가격"></td>
+                        <td class="enchantQuan4">5개</td>
+                        <td class="enchantResult4"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/원기단.png" alt="원기단"></td>
-                        <td><input type="text" class="inchantPrice5" placeholder="가격"></td>
-                        <td class="inchantQuan5">1개</td>
-                        <td class="inchantResult5"></td>
+                        <td><input type="text" class="enchantPrice5" placeholder="가격"></td>
+                        <td class="enchantQuan5">1개</td>
+                        <td class="enchantResult5"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/형상 복원 가루.png" alt="형상 복원 가루"></td>
-                        <td><input type="text" class="inchantPrice6" placeholder="가격"></td>
-                        <td class="inchantQuan6">1개</td>
-                        <td class="inchantResult6"></td>
+                        <td><input type="text" class="enchantPrice6" placeholder="가격"></td>
+                        <td class="enchantQuan6">1개</td>
+                        <td class="enchantResult6"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/용맹의 증표.png" alt="용맹의 증표"></td>
-                        <td><input type="text" class="inchantPrice7" placeholder="가격"></td>
-                        <td class="inchantQuan7">30개</td>
-                        <td class="inchantResult7"></td>
+                        <td><input type="text" class="enchantPrice7" placeholder="가격"></td>
+                        <td class="enchantQuan7">30개</td>
+                        <td class="enchantResult7"></td>
                     </tr>
                     <tr>
                         <td>수수료</td>
-                        <td class="inchantPrice8">1,000,000</td>
-                        <td class="inchantQuan8">1개</td>
-                        <td class="inchantResult8"></td>
+                        <td class="enchantPrice8">💰 : 1,000,000</td>
+                        <td class="enchantQuan8">1개</td>
+                        <td class="enchantResult8"></td>
                     </tr>
                 </table>
                 <table id="끈기의 백수정">
@@ -1358,57 +1366,57 @@
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/끈기의 주술 비법.png" alt="끈기의 주술 비법"></td>
-                        <td><input type="text" class="inchantPrice0" placeholder="가격"></td>
-                        <td class="inchantQuan0">1개</td>
-                        <td class="inchantResult0"></td>
+                        <td><input type="text" class="enchantPrice0" placeholder="가격"></td>
+                        <td class="enchantQuan0">1개</td>
+                        <td class="enchantResult0"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/강화된 백수정(+5).png" alt="강화된 백수정(+5)"></td>
-                        <td><input type="text" class="inchantPrice1" placeholder="가격"></td>
-                        <td class="inchantQuan1">1개</td>
-                        <td class="inchantResult1"></td>
+                        <td><input type="text" class="enchantPrice1" placeholder="가격"></td>
+                        <td class="enchantQuan1">1개</td>
+                        <td class="enchantResult1"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/수집된 영혼.png" alt="수집된 영혼"></td>
-                        <td><input type="text" class="inchantPrice2" placeholder="가격"></td>
-                        <td class="inchantQuan2">20개</td>
-                        <td class="inchantResult2"></td>
+                        <td><input type="text" class="enchantPrice2" placeholder="가격"></td>
+                        <td class="enchantQuan2">20개</td>
+                        <td class="enchantResult2"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/바람의 인장.png" alt="바람의 인장"></td>
-                        <td><input type="text" class="inchantPrice3" placeholder="가격"></td>
-                        <td class="inchantQuan3">10개</td>
-                        <td class="inchantResult3"></td>
+                        <td><input type="text" class="enchantPrice3" placeholder="가격"></td>
+                        <td class="enchantQuan3">10개</td>
+                        <td class="enchantResult3"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/달의 인장.png" alt="달의 인장"></td>
-                        <td><input type="text" class="inchantPrice4" placeholder="가격"></td>
-                        <td class="inchantQuan4">5개</td>
-                        <td class="inchantResult4"></td>
+                        <td><input type="text" class="enchantPrice4" placeholder="가격"></td>
+                        <td class="enchantQuan4">5개</td>
+                        <td class="enchantResult4"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/원기단.png" alt="원기단"></td>
-                        <td><input type="text" class="inchantPrice5" placeholder="가격"></td>
-                        <td class="inchantQuan5">1개</td>
-                        <td class="inchantResult5"></td>
+                        <td><input type="text" class="enchantPrice5" placeholder="가격"></td>
+                        <td class="enchantQuan5">1개</td>
+                        <td class="enchantResult5"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/형상 복원 가루.png" alt="형상 복원 가루"></td>
-                        <td><input type="text" class="inchantPrice6" placeholder="가격"></td>
-                        <td class="inchantQuan6">1개</td>
-                        <td class="inchantResult6"></td>
+                        <td><input type="text" class="enchantPrice6" placeholder="가격"></td>
+                        <td class="enchantQuan6">1개</td>
+                        <td class="enchantResult6"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/용맹의 증표.png" alt="용맹의 증표"></td>
-                        <td><input type="text" class="inchantPrice7" placeholder="가격"></td>
-                        <td class="inchantQuan7">30개</td>
-                        <td class="inchantResult7"></td>
+                        <td><input type="text" class="enchantPrice7" placeholder="가격"></td>
+                        <td class="enchantQuan7">30개</td>
+                        <td class="enchantResult7"></td>
                     </tr>
                     <tr>
                         <td>수수료</td>
-                        <td class="inchantPrice8">1,000,000</td>
-                        <td class="inchantQuan8">1개</td>
-                        <td class="inchantResult8"></td>
+                        <td class="enchantPrice8">💰 : 1,000,000</td>
+                        <td class="enchantQuan8">1개</td>
+                        <td class="enchantResult8"></td>
                     </tr>
                 </table>
                 <table id="신비한 월장석">
@@ -1420,72 +1428,184 @@
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/신비한 주술 비법.png" alt="신비한 주술 비법"></td>
-                        <td><input type="text" class="inchantPrice0" placeholder="가격"></td>
-                        <td class="inchantQuan0">1개</td>
-                        <td class="inchantResult0"></td>
+                        <td><input type="text" class="enchantPrice0" placeholder="가격"></td>
+                        <td class="enchantQuan0">1개</td>
+                        <td class="enchantResult0"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/강화된 월장석(+5).png" alt="강화된 월장석(+5)"></td>
-                        <td><input type="text" class="inchantPrice1" placeholder="가격"></td>
-                        <td class="inchantQuan1">1개</td>
-                        <td class="inchantResult1"></td>
+                        <td><input type="text" class="enchantPrice1" placeholder="가격"></td>
+                        <td class="enchantQuan1">1개</td>
+                        <td class="enchantResult1"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/수집된 영혼.png" alt="수집된 영혼"></td>
-                        <td><input type="text" class="inchantPrice2" placeholder="가격"></td>
-                        <td class="inchantQuan2">20개</td>
-                        <td class="inchantResult2"></td>
+                        <td><input type="text" class="enchantPrice2" placeholder="가격"></td>
+                        <td class="enchantQuan2">20개</td>
+                        <td class="enchantResult2"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/물의 인장.png" alt="물의 인장"></td>
-                        <td><input type="text" class="inchantPrice3" placeholder="가격"></td>
-                        <td class="inchantQuan3">10개</td>
-                        <td class="inchantResult3"></td>
+                        <td><input type="text" class="enchantPrice3" placeholder="가격"></td>
+                        <td class="enchantQuan3">10개</td>
+                        <td class="enchantResult3"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/달의 인장.png" alt="달의 인장"></td>
-                        <td><input type="text" class="inchantPrice4" placeholder="가격"></td>
-                        <td class="inchantQuan4">5개</td>
-                        <td class="inchantResult4"></td>
+                        <td><input type="text" class="enchantPrice4" placeholder="가격"></td>
+                        <td class="enchantQuan4">5개</td>
+                        <td class="enchantResult4"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/원기단.png" alt="원기단"></td>
-                        <td><input type="text" class="inchantPrice5" placeholder="가격"></td>
-                        <td class="inchantQuan5">1개</td>
-                        <td class="inchantResult5"></td>
+                        <td><input type="text" class="enchantPrice5" placeholder="가격"></td>
+                        <td class="enchantQuan5">1개</td>
+                        <td class="enchantResult5"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/형상 복원 가루.png" alt="형상 복원 가루"></td>
-                        <td><input type="text" class="inchantPrice6" placeholder="가격"></td>
-                        <td class="inchantQuan6">1개</td>
-                        <td class="inchantResult6"></td>
+                        <td><input type="text" class="enchantPrice6" placeholder="가격"></td>
+                        <td class="enchantQuan6">1개</td>
+                        <td class="enchantResult6"></td>
                     </tr>
                     <tr>
                         <td><img class="tooltip" src="img/용맹의 증표.png" alt="용맹의 증표"></td>
-                        <td><input type="text" class="inchantPrice7" placeholder="가격"></td>
-                        <td class="inchantQuan7">30개</td>
-                        <td class="inchantResult7"></td>
+                        <td><input type="text" class="enchantPrice7" placeholder="가격"></td>
+                        <td class="enchantQuan7">30개</td>
+                        <td class="enchantResult7"></td>
                     </tr>
                     <tr>
                         <td>수수료</td>
-                        <td class="inchantPrice8">1,000,000</td>
-                        <td class="inchantQuan8">1개</td>
-                        <td class="inchantResult8"></td>
+                        <td class="enchantPrice8">💰 : 1,000,000</td>
+                        <td class="enchantQuan8">1개</td>
+                        <td class="enchantResult8"></td>
+                    </tr>
+                </table>
+                <table id="명왕갑">
+                    <tr>
+                        <th>아이템</th>
+                        <th>가격</th>
+                        <th>수량</th>
+                        <th>결과</th>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/고급 궁기의 깃털.png" alt="고급 궁기의 깃털"></td>
+                        <td><input type="text" class="enchantPrice0" placeholder="가격"></td>
+                        <td class="enchantQuan0">1개</td>
+                        <td class="enchantResult0"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/악몽의 구슬(水).png" alt="악몽의구슬(水)"></td>
+                        <td><input type="text" class="enchantPrice1" placeholder="가격"></td>
+                        <td class="enchantQuan1">2개</td>
+                        <td class="enchantResult1"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/악몽의 정수.png" alt="악몽의 정수"></td>
+                        <td><input type="text" class="enchantPrice2" placeholder="가격"></td>
+                        <td class="enchantQuan2">20개</td>
+                        <td class="enchantResult2"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/악몽의 인장.png" alt="악몽의 인장"></td>
+                        <td><input type="text" class="enchantPrice3" placeholder="가격"></td>
+                        <td class="enchantQuan3">75개</td>
+                        <td class="enchantResult3"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/악몽의 결정체(水).png" alt="악몽의 결정체(水)"></td>
+                        <td><input type="text" class="enchantPrice4" placeholder="가격"></td>
+                        <td class="enchantQuan4">100개</td>
+                        <td class="enchantResult4"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/혼의 결정.png" alt="혼의 결정"></td>
+                        <td><input type="text" class="enchantPrice5" placeholder="가격"></td>
+                        <td class="enchantQuan5">75개</td>
+                        <td class="enchantResult5"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/봉인의서.png" alt="봉인의서"></td>
+                        <td><input type="text" class="enchantPrice6" placeholder="가격"></td>
+                        <td class="enchantQuan6">5개</td>
+                        <td class="enchantResult6"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/각성석.png" alt="각성석"></td>
+                        <td><input type="text" class="enchantPrice7" placeholder="가격"></td>
+                        <td class="enchantQuan7">3개</td>
+                        <td class="enchantResult7"></td>
+                    </tr>
+                    <tr>
+                        <td>수수료</td>
+                        <td class="enchantPrice8">💰 : 100,000,000</td>
+                        <td class="enchantQuan8">10개</td>
+                        <td class="enchantResult8"></td>
+                    </tr>
+                </table>
+                <table id="고급 명왕갑">
+                    <tr>
+                        <th>아이템</th>
+                        <th>가격</th>
+                        <th>수량</th>
+                        <th>결과</th>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/현무의 석상(200레벨).png" alt="현무의 석상(200레벨)"></td>
+                        <td><input type="text" class="enchantPrice0" placeholder="가격"></td>
+                        <td class="enchantQuan0">1개</td>
+                        <td class="enchantResult0"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/부서진 산호궁.png" alt="부서진 산호궁"></td>
+                        <td><input type="text" class="enchantPrice1" placeholder="가격"></td>
+                        <td class="enchantQuan1">2개</td>
+                        <td class="enchantResult1"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/악몽의 결정체(水).png" alt="악몽의 결정체(水)"></td>
+                        <td><input type="text" class="enchantPrice2" placeholder="가격"></td>
+                        <td class="enchantQuan2">20개</td>
+                        <td class="enchantResult2"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/혼의 결정.png" alt="혼의 결정"></td>
+                        <td><input type="text" class="enchantPrice3" placeholder="가격"></td>
+                        <td class="enchantQuan3">75개</td>
+                        <td class="enchantResult3"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/봉인의돌.png" alt="봉인의돌"></td>
+                        <td><input type="text" class="enchantPrice4" placeholder="가격"></td>
+                        <td class="enchantQuan4">100개</td>
+                        <td class="enchantResult4"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tooltip" src="img/봉인의서.png" alt="봉인의서"></td>
+                        <td><input type="text" class="enchantPrice5" placeholder="가격"></td>
+                        <td class="enchantQuan5">75개</td>
+                        <td class="enchantResult5"></td>
+                    </tr>
+                    <tr>
+                        <td>수수료</td>
+                        <td class="enchantPrice6">💰 : 100,000,000</td>
+                        <td class="enchantQuan6">5개</td>
+                        <td class="enchantResult6"></td>
                     </tr>
                 </table>
             </div>
         </div>
-        <div id="inchantBox">
-            <div id="inchantTotal">
-                <div id="inchantTotalCalc">
+        <div id="enchantBox">
+            <div id="enchantTotal">
+                <div id="enchantTotalCalc">
                     <div class="whiteBorderBox">
-                        <span id="inchantTotalGoldResult">💡 주술 비용으로 총 &nbsp; 원 발생 하였습니다.</span>
+                        <span id="enchantTotalGoldResult">💡 주술 비용으로 총 &nbsp; 원 발생 하였습니다.</span>
                         <span id="tradePrice">💡 육의전 최저가 : </span>
-                        <span id="compareInchantResult">💡 직접 구매보다 &nbsp; 원 SAVE 하였습니다.</span>
+                        <span id="compareEnchantResult">💡 직접 구매보다 &nbsp; 원 SAVE 하였습니다.</span>
                     </div>
                 </div>
             </div>
-            <button type="submit" id="inchantSubmitBtn">
+            <button type="submit" id="enchantSubmitBtn">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -1496,7 +1616,7 @@
     </div>
 </section>
 <script src="js/app.js"></script>
-<script src="js/inchant.js"></script>
+<script src="js/enchant.js"></script>
 <script src="js/dropitem.js"></script>
 
 </body>

@@ -398,7 +398,7 @@ table input {
 
 /* 계산하기 버튼 디자인 */
 #submitBtn,
-#inchantSubmitBtn {
+#enchantSubmitBtn {
   position: absolute;
   right: 30px;
   bottom: 20px;
@@ -503,7 +503,7 @@ table input {
 /*  섹션 2 End */
 
 
-.inchantItem {
+.enchantItem {
   position: relative;
   width: 500px;
   height: 500px;
@@ -511,11 +511,11 @@ table input {
   border: black 2px solid;
 }
 
-.inchantItem .title {
+.enchantItem .title {
   background-color: #40A19DFF;
 }
 
-#inchantImageWrapper {
+#enchantImageWrapper {
   position: sticky; /* 스크롤 시 이미지가 상단에 고정되도록 설정 */
   top: 0; /* 상단과의 거리 */
   height: 100%;
@@ -524,7 +524,7 @@ table input {
   align-items: center;
 }
 
-#inchantImageWrapper img{
+#enchantImageWrapper img{
   height: 40%;
   width: 100px;
 }
@@ -607,7 +607,7 @@ table input {
   }
 }
 
-#inchantImageWrapper {
+#enchantImageWrapper {
   position: sticky; /* 스크롤 시 이미지가 상단에 고정되도록 설정 */
   top: 0; /* 상단과의 거리 */
   height: 100%;
@@ -617,7 +617,7 @@ table input {
   text-align: center;
 }
 
-#inchantTableWrapper {
+#enchantTableWrapper {
   display: flex;
   flex-direction: row; /* 이미지와 테이블을 세로로 배열 */
   align-items: flex-start;
@@ -627,7 +627,7 @@ table input {
   border-bottom: black 1px solid;
 }
 
-#selectInchant {
+#selectEnchant {
   font-weight: bold;
   position: absolute;
   top: 60px;
@@ -641,7 +641,7 @@ table input {
   border-radius: 5px;
 }
 
-#selectInchant:hover {
+#selectEnchant:hover {
   background: #4c83f3;
   color: white;
 }
@@ -669,7 +669,7 @@ table input {
   color: white;
 }
 
-#inchantSubmitBtn {
+#enchantSubmitBtn {
   position: absolute;
   right: 30px;
   bottom: 20px;
@@ -684,7 +684,7 @@ table input {
   filter: hue-rotate(40deg);
 }
 
-#inchantSubmitBtn:hover {
+#enchantSubmitBtn:hover {
   background: #03e9f4;
   color: white;
   box-shadow: 0 0 5px #03e9f4,
@@ -694,12 +694,12 @@ table input {
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
-#inchantSubmitBtn span{
+#enchantSubmitBtn span{
   position: absolute;
   display: block;
 }
 
-#inchantSubmitBtn span:nth-child(1){
+#enchantSubmitBtn span:nth-child(1){
   top: 0;
   left: 0;
   width: 100%;
@@ -715,7 +715,7 @@ table input {
     left: 100%;
   }
 }
-#inchantSubmitBtn span:nth-child(2){
+#enchantSubmitBtn span:nth-child(2){
   top: -100%;
   right: 0;
   width: 2px;
@@ -732,7 +732,7 @@ table input {
     top: 100%;
   }
 }
-#inchantSubmitBtn span:nth-child(3){
+#enchantSubmitBtn span:nth-child(3){
   bottom: 0;
   right: 0;
   width: 100%;
@@ -751,7 +751,7 @@ table input {
 }
 
 
-#inchantSubmitBtn span:nth-child(4){
+#enchantSubmitBtn span:nth-child(4){
   bottom: -100%;
   left: 0;
   width: 2px;
@@ -769,12 +769,12 @@ table input {
   }
 }
 
-#inchantBox {
+#enchantBox {
   position: relative;
   height: 143px;
 }
 
-#inchantTotal {
+#enchantTotal {
   position: absolute;
   top: 20px;
   left: 10px;
@@ -783,7 +783,7 @@ table input {
   height: 50%;
 }
 
-#inchantTotalGoldResult {
+#enchantTotalGoldResult {
   font-weight: 700;
   display: block;
   left: 20px;
@@ -797,7 +797,7 @@ table input {
   left: 20px;
 }
 
-#compareInchantResult {
+#compareEnchantResult {
   font-weight: 700;
   display: block;
   padding-top: 3px;

@@ -1,13 +1,13 @@
 // 드롭 다운 메뉴 선택 시 이미지,이름,테이블등 출력
 window.addEventListener("load", function () {
-    let selectInchant = document.getElementById("selectInchant");
+    let selectEnchant = document.getElementById("selectEnchant");
     let sec2 = document.getElementById("sec2");
     let tables2 = sec2.querySelectorAll("table");
-    let images2 = sec2.querySelectorAll("#inchantImageWrapper img");
-    let inchantDiv = document.querySelector("#inchantBox");
+    let images2 = sec2.querySelectorAll("#enchantImageWrapper img");
+    let enchantDiv = document.querySelector("#enchantBox");
 
 
-    function hideAllInchant(elements) {
+    function hideAllEnchant(elements) {
         elements.forEach(el => {
             el.style.display = "none"
             removeAltText(el);
@@ -22,7 +22,7 @@ window.addEventListener("load", function () {
 
     }
 
-    /*var wrapper = document.getElementById('inchantImageWrapper');
+    /*var wrapper = document.getElementById('enchantImageWrapper');
     var newDiv = document.createElement('div');
     newDiv.className = 'imageBorder';
     wrapper.appendChild(newDiv);*/
@@ -46,51 +46,61 @@ window.addEventListener("load", function () {
     }
 
 
-    hideAllInchant(tables2);
-    hideAllInchant(images2);
-    inchantDiv.style.display = "none";
-    showElementChant("inchantDefault-img");
-    selectInchant.addEventListener("change", function () {
-        hideAllInchant(tables2);
-        hideAllInchant(images2);
-        if (selectInchant.value !== "default") {
-            inchantDiv.style.display = "block";
+    hideAllEnchant(tables2);
+    hideAllEnchant(images2);
+    enchantDiv.style.display = "none";
+    showElementChant("enchantDefault-img");
+    selectEnchant.addEventListener("change", function () {
+        hideAllEnchant(tables2);
+        hideAllEnchant(images2);
+        if (selectEnchant.value !== "default") {
+            enchantDiv.style.display = "block";
         } else {
-            inchantDiv.style.display = "none";
+            enchantDiv.style.display = "none";
         }
 
-        showElementChant(selectInchant.value);
-        showElementChant(selectInchant.value + "-img");
+        showElementChant(selectEnchant.value);
+        showElementChant(selectEnchant.value + "-img");
     });
 
 
-    selectInchant.value = "inchantDefault";
-    showElementChant("inchantDefault");
+    selectEnchant.value = "enchantDefault";
+    showElementChant("enchantDefault");
 });
 
 
 // 계산 함수
-function inchantItem(inchantPriceClass, inchantQuanClass, inchantResultClass) {
+function enchantItem(enchantPriceClass, enchantQuanClass, enchantResultClass) {
     let total = 0;
-    $("." + inchantPriceClass).each(function (index) {
-        let price = $(this).val() ? parseInt($(this).val().replace(/,/g, ''), 10) : 0;
-        let quantity = $("." + inchantQuanClass).eq(index).text();
+    $("." + enchantPriceClass).each(function (index) {
+// let price = $(this).val() ? parseInt($(this).val().replace(/,/g, ''), 10) : 0;
+        let price = 0;
+        if ($(this).is('input')) {
+            price = $(this).val() ? parseInt($(this).val().replace(/,/g, ''), 10) : 0;
+        } else {
+            price = $(this).text() ? parseInt($(this).text().replace("💰 : ", "").replace(/,/g, ''), 10) : 0;
+        }
+        let quantity = $("." + enchantQuanClass).eq(index).text();
         quantity = quantity.replace('개', ''); // 수량에서 '개'를 제거
         let result = price * quantity;
 
         if (!isNaN(result)) { // 결과가 숫자인 경우에만 출력
-            $("." + inchantResultClass).eq(index).text(result + '원');
+            $("." + enchantResultClass).eq(index).text("💰 :" + result.toLocaleString());
             total += result;
         }
     });
     return total;
 }
 
-$('#inchantSubmitBtn').click(function () {
-    var inchantTotalGold = 0;
+$('#enchantSubmitBtn').click(function () {
+    var enchantTotalGold = 0;
+    /*    var selectedEnchant = document.getElementById('selectEnchant').value;*/
+
+    /*var enchantRows = document.querySelectorAll('#' + selectedEnchant + ' tr');*/
+
     for (var i = 0; i < 10; i++) {
-        inchantTotalGold += inchantItem('inchantPrice' + i, 'inchantQuan' + i, 'inchantResult' + i);
+        enchantTotalGold += enchantItem('enchantPrice' + (i-1), 'enchantQuan' + (i-1), 'enchantResult' + (i-1));
     }
-    document.getElementById('inchantTotalGoldResult').innerText = "💡 주술 비용으로 총 " + inchantTotalGold.toLocaleString() + "원 발생 하였습니다.";
+    document.getElementById('enchantTotalGoldResult').innerText = "💡 주술 비용으로 총 " + enchantTotalGold.toLocaleString() + "원 발생 하였습니다.";
 
 });
